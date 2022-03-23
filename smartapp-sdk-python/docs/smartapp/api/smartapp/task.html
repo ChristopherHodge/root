@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>smartapp.api.smartapp.task API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>smartapp.api.smartapp.task</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import asyncio
+import aiohttp
+import fastapi
+import pydantic
+import functools
+import traceback
+from typing import Callable, Any
+
+from smartapp.api import types
+
+from smartapp import logger
+log = logger.get()
+
+DEFAULT_TIMEOUT=10.0
+
+class AppTask(object):
+    &#34;&#34;&#34;Create a new AppTask instance.  Provides a convenient way
+    to run a particular function as an async task, handling basic
+    plubming like timeouts, exceptions, logging, etc.
+
+    Args:
+        func (Callable): function to call
+        args (list): call args
+        kwargs (dict): call kwargs
+    &#34;&#34;&#34;
+
+    loop = asyncio.get_event_loop()
+
+    @staticmethod
+    def handle_excs(func: Callable) -&gt; Callable:
+        &#34;&#34;&#34;(**decorator**) Provides a standard set of exception handlers
+        to deal with many of the potentially expected scenarios, as
+        well as some useful logging of unhandled types before they escape
+        the app an enter the FastAPI runtime.
+
+        This should generally be applied to any entrypoint to the SmartApp
+        from a route or lifecycle.
+        &#34;&#34;&#34;
+
+        @functools.wraps(func)
+        async def wrapper(self, *args, **kwargs):
+            try:
+                return await func(self, *args, **kwargs)
+            except types.AuthInvalid:
+                return await self.renew_token()
+            except pydantic.ValidationError as e:
+                return log.error(e.json())
+            except aiohttp.ClientResponseError as e:
+                return log.error(&#34;invalid HTTP response: &#34;, e.reason)
+            except aiohttp.ClientConnectionError as e:
+                return log.error(&#34;connection error: &#34;, e.reason)
+            except fastapi.HTTPException as e:
+                raise e
+            except Exception:
+                log.error(&#34;unexpected error: %s&#34;, traceback.format_exc())
+        return wrapper
+
+    @classmethod
+    def async_callable(cls, func: Callable,
+                            timeout: int=DEFAULT_TIMEOUT) -&gt; Callable:
+        &#34;&#34;&#34;(**decorator**) When called, the decorated function will return
+        a Callable, which when called will execute as an async task,
+        preserving any arguments used.
+
+        This allows you to decorate a SmartApp Route handler to create an
+        async route.
+        &#34;&#34;&#34;
+        @functools.wraps(func)
+        async def wrapper(self, *args, **kwargs):
+            coro = asyncio.wait_for(
+                func(self, *args, **kwargs), timeout=timeout
+            )
+
+            task = cls.loop.create_task(coro)
+            task.add_done_callback(cls.done)
+        return wrapper
+
+    @classmethod
+    def async_task(cls, self, func: Callable, *args,
+                              timeout=DEFAULT_TIMEOUT, **kwargs) -&gt; Any:
+        &#34;&#34;&#34;(**decorator**) When called, the decorated function will execute
+        as an asynchronous task.  Args may be passed to the function by
+        the decorator.
+
+        Useful for internal SmartApp methods which are perofmring API
+        interactions which are not required to be synchronous.
+        &#34;&#34;&#34;
+        @functools.wraps(func)
+        async def wrapper(self, *args, **kwargs):
+            coro = asyncio.wait_for(
+                func(self, *args, **kwargs), timeout=timeout
+            )
+
+            task = cls.loop.create_task(coro)
+            task.add_done_callback(cls.done)
+        return wrapper(self, *args, **kwargs)
+
+    def __new__(cls, func: Callable, *args,
+                     timeout=DEFAULT_TIMEOUT, **kwargs) -&gt; None:
+        coro = asyncio.wait_for(
+            func(*args, **kwargs), timeout=timeout
+        )
+
+        task = cls.loop.create_task(coro)
+        task.add_done_callback(cls.done)
+
+    @staticmethod
+    def done(task):
+        exc = task.exception()
+        if exc:
+            msg = str(exc)
+            if exc.__dict__:
+                msg = str(exc.__dict__)
+            log.error(&#34;AppTask: %s: %s&#34;, exc.__class__.__name__, msg)
+            if isinstance(exc, types.AppHTTPError):
+                return
+            if exc.__traceback__:
+                msg = traceback.format_exception(type(exc), exc, exc.__traceback__)
+                log.error(&#34;AppTask: %s&#34;, str().join(msg))
+        else:
+            task.result()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="smartapp.api.smartapp.task.AppTask"><code class="flex name class">
+<span>class <span class="ident">AppTask</span></span>
+<span>(</span><span>func: Callable, *args, timeout=10.0, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new AppTask instance.
+Provides a convenient way
+to run a particular function as an async task, handling basic
+plubming like timeouts, exceptions, logging, etc.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>func</code></strong> :&ensp;<code>Callable</code></dt>
+<dd>function to call</dd>
+<dt><strong><code>args</code></strong> :&ensp;<code>list</code></dt>
+<dd>call args</dd>
+<dt><strong><code>kwargs</code></strong> :&ensp;<code>dict</code></dt>
+<dd>call kwargs</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AppTask(object):
+    &#34;&#34;&#34;Create a new AppTask instance.  Provides a convenient way
+    to run a particular function as an async task, handling basic
+    plubming like timeouts, exceptions, logging, etc.
+
+    Args:
+        func (Callable): function to call
+        args (list): call args
+        kwargs (dict): call kwargs
+    &#34;&#34;&#34;
+
+    loop = asyncio.get_event_loop()
+
+    @staticmethod
+    def handle_excs(func: Callable) -&gt; Callable:
+        &#34;&#34;&#34;(**decorator**) Provides a standard set of exception handlers
+        to deal with many of the potentially expected scenarios, as
+        well as some useful logging of unhandled types before they escape
+        the app an enter the FastAPI runtime.
+
+        This should generally be applied to any entrypoint to the SmartApp
+        from a route or lifecycle.
+        &#34;&#34;&#34;
+
+        @functools.wraps(func)
+        async def wrapper(self, *args, **kwargs):
+            try:
+                return await func(self, *args, **kwargs)
+            except types.AuthInvalid:
+                return await self.renew_token()
+            except pydantic.ValidationError as e:
+                return log.error(e.json())
+            except aiohttp.ClientResponseError as e:
+                return log.error(&#34;invalid HTTP response: &#34;, e.reason)
+            except aiohttp.ClientConnectionError as e:
+                return log.error(&#34;connection error: &#34;, e.reason)
+            except fastapi.HTTPException as e:
+                raise e
+            except Exception:
+                log.error(&#34;unexpected error: %s&#34;, traceback.format_exc())
+        return wrapper
+
+    @classmethod
+    def async_callable(cls, func: Callable,
+                            timeout: int=DEFAULT_TIMEOUT) -&gt; Callable:
+        &#34;&#34;&#34;(**decorator**) When called, the decorated function will return
+        a Callable, which when called will execute as an async task,
+        preserving any arguments used.
+
+        This allows you to decorate a SmartApp Route handler to create an
+        async route.
+        &#34;&#34;&#34;
+        @functools.wraps(func)
+        async def wrapper(self, *args, **kwargs):
+            coro = asyncio.wait_for(
+                func(self, *args, **kwargs), timeout=timeout
+            )
+
+            task = cls.loop.create_task(coro)
+            task.add_done_callback(cls.done)
+        return wrapper
+
+    @classmethod
+    def async_task(cls, self, func: Callable, *args,
+                              timeout=DEFAULT_TIMEOUT, **kwargs) -&gt; Any:
+        &#34;&#34;&#34;(**decorator**) When called, the decorated function will execute
+        as an asynchronous task.  Args may be passed to the function by
+        the decorator.
+
+        Useful for internal SmartApp methods which are perofmring API
+        interactions which are not required to be synchronous.
+        &#34;&#34;&#34;
+        @functools.wraps(func)
+        async def wrapper(self, *args, **kwargs):
+            coro = asyncio.wait_for(
+                func(self, *args, **kwargs), timeout=timeout
+            )
+
+            task = cls.loop.create_task(coro)
+            task.add_done_callback(cls.done)
+        return wrapper(self, *args, **kwargs)
+
+    def __new__(cls, func: Callable, *args,
+                     timeout=DEFAULT_TIMEOUT, **kwargs) -&gt; None:
+        coro = asyncio.wait_for(
+            func(*args, **kwargs), timeout=timeout
+        )
+
+        task = cls.loop.create_task(coro)
+        task.add_done_callback(cls.done)
+
+    @staticmethod
+    def done(task):
+        exc = task.exception()
+        if exc:
+            msg = str(exc)
+            if exc.__dict__:
+                msg = str(exc.__dict__)
+            log.error(&#34;AppTask: %s: %s&#34;, exc.__class__.__name__, msg)
+            if isinstance(exc, types.AppHTTPError):
+                return
+            if exc.__traceback__:
+                msg = traceback.format_exception(type(exc), exc, exc.__traceback__)
+                log.error(&#34;AppTask: %s&#34;, str().join(msg))
+        else:
+            task.result()</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="smartapp.api.smartapp.task.AppTask.async_callable"><code class="name flex">
+<span>def <span class="ident">async_callable</span></span>(<span>func: Callable, timeout: int = 10.0) ‑> Callable</span>
+</code></dt>
+<dd>
+<div class="desc"><p>(<strong>decorator</strong>) When called, the decorated function will return
+a Callable, which when called will execute as an async task,
+preserving any arguments used.</p>
+<p>This allows you to decorate a SmartApp Route handler to create an
+async route.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def async_callable(cls, func: Callable,
+                        timeout: int=DEFAULT_TIMEOUT) -&gt; Callable:
+    &#34;&#34;&#34;(**decorator**) When called, the decorated function will return
+    a Callable, which when called will execute as an async task,
+    preserving any arguments used.
+
+    This allows you to decorate a SmartApp Route handler to create an
+    async route.
+    &#34;&#34;&#34;
+    @functools.wraps(func)
+    async def wrapper(self, *args, **kwargs):
+        coro = asyncio.wait_for(
+            func(self, *args, **kwargs), timeout=timeout
+        )
+
+        task = cls.loop.create_task(coro)
+        task.add_done_callback(cls.done)
+    return wrapper</code></pre>
+</details>
+</dd>
+<dt id="smartapp.api.smartapp.task.AppTask.async_task"><code class="name flex">
+<span>def <span class="ident">async_task</span></span>(<span>self, func: Callable, *args, timeout=10.0, **kwargs) ‑> Any</span>
+</code></dt>
+<dd>
+<div class="desc"><p>(<strong>decorator</strong>) When called, the decorated function will execute
+as an asynchronous task.
+Args may be passed to the function by
+the decorator.</p>
+<p>Useful for internal SmartApp methods which are perofmring API
+interactions which are not required to be synchronous.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def async_task(cls, self, func: Callable, *args,
+                          timeout=DEFAULT_TIMEOUT, **kwargs) -&gt; Any:
+    &#34;&#34;&#34;(**decorator**) When called, the decorated function will execute
+    as an asynchronous task.  Args may be passed to the function by
+    the decorator.
+
+    Useful for internal SmartApp methods which are perofmring API
+    interactions which are not required to be synchronous.
+    &#34;&#34;&#34;
+    @functools.wraps(func)
+    async def wrapper(self, *args, **kwargs):
+        coro = asyncio.wait_for(
+            func(self, *args, **kwargs), timeout=timeout
+        )
+
+        task = cls.loop.create_task(coro)
+        task.add_done_callback(cls.done)
+    return wrapper(self, *args, **kwargs)</code></pre>
+</details>
+</dd>
+<dt id="smartapp.api.smartapp.task.AppTask.handle_excs"><code class="name flex">
+<span>def <span class="ident">handle_excs</span></span>(<span>func: Callable) ‑> Callable</span>
+</code></dt>
+<dd>
+<div class="desc"><p>(<strong>decorator</strong>) Provides a standard set of exception handlers
+to deal with many of the potentially expected scenarios, as
+well as some useful logging of unhandled types before they escape
+the app an enter the FastAPI runtime.</p>
+<p>This should generally be applied to any entrypoint to the SmartApp
+from a route or lifecycle.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def handle_excs(func: Callable) -&gt; Callable:
+    &#34;&#34;&#34;(**decorator**) Provides a standard set of exception handlers
+    to deal with many of the potentially expected scenarios, as
+    well as some useful logging of unhandled types before they escape
+    the app an enter the FastAPI runtime.
+
+    This should generally be applied to any entrypoint to the SmartApp
+    from a route or lifecycle.
+    &#34;&#34;&#34;
+
+    @functools.wraps(func)
+    async def wrapper(self, *args, **kwargs):
+        try:
+            return await func(self, *args, **kwargs)
+        except types.AuthInvalid:
+            return await self.renew_token()
+        except pydantic.ValidationError as e:
+            return log.error(e.json())
+        except aiohttp.ClientResponseError as e:
+            return log.error(&#34;invalid HTTP response: &#34;, e.reason)
+        except aiohttp.ClientConnectionError as e:
+            return log.error(&#34;connection error: &#34;, e.reason)
+        except fastapi.HTTPException as e:
+            raise e
+        except Exception:
+            log.error(&#34;unexpected error: %s&#34;, traceback.format_exc())
+    return wrapper</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="smartapp.api.smartapp" href="index.html">smartapp.api.smartapp</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="smartapp.api.smartapp.task.AppTask" href="#smartapp.api.smartapp.task.AppTask">AppTask</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.smartapp.task.AppTask.async_callable" href="#smartapp.api.smartapp.task.AppTask.async_callable">async_callable</a></code></li>
+<li><code><a title="smartapp.api.smartapp.task.AppTask.async_task" href="#smartapp.api.smartapp.task.AppTask.async_task">async_task</a></code></li>
+<li><code><a title="smartapp.api.smartapp.task.AppTask.handle_excs" href="#smartapp.api.smartapp.task.AppTask.handle_excs">handle_excs</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

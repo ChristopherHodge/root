@@ -1,0 +1,2487 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>smartapp.api.models.smartapp API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>smartapp.api.models.smartapp</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from __future__ import annotations
+
+from datetime import datetime
+from enum import Enum
+from typing import Any, Dict, List, Optional
+from uuid import UUID
+
+from pydantic import AnyUrl, BaseModel, Extra, Field, conint, constr
+
+from smartapp.api.models import smartthings
+
+class LifecycleType(Enum):
+    configuration   = &#39;CONFIGURATION&#39;
+    install         = &#39;INSTALL&#39;
+    update          = &#39;UPDATE&#39;
+    event           = &#39;EVENT&#39;
+    oauth_callback  = &#39;OAUTH_CALLBACK&#39;
+    uninstall       = &#39;UNINSTALL&#39;
+
+class SubscriptionType(Enum):
+    DEVICE             = &#39;DEVICE&#39;
+    CAPABILITY         = &#39;CAPABILITY&#39;
+    MODE               = &#39;MODE&#39;
+    DEVICE_LIFECYCLE   = &#39;DEVICE_LIFECYCLE&#39;
+    DEVICE_HEALTH      = &#39;DEVICE_HEALTH&#39;
+    SECURITY_ARM_STATE = &#39;SECURITY_ARM_STATE&#39;
+    HUB_HEALTH         = &#39;HUB_HEALTH&#39;
+    SCENE_LIFECYCLE    = &#39;SCENE_LIFECYCLE&#39;
+
+class EventType(Enum):
+    DEVICE_COMMANDS_EVENT         = &#39;DEVICE_COMMANDS_EVENT&#39;
+    DEVICE_EVENT                  = &#39;DEVICE_EVENT&#39;
+    DEVICE_HEALTH_EVENT           = &#39;DEVICE_HEALTH_EVENT&#39;
+    DEVICE_LIFECYCLE_EVENT        = &#39;DEVICE_LIFECYCLE_EVENT&#39;
+    HUB_HEALTH_EVENT              = &#39;HUB_HEALTH_EVENT&#39;
+    MODE_EVENT                    = &#39;MODE_EVENT&#39;
+    SCENE_LIFECYCLE_EVENT         = &#39;SCENE_LIFECYCLE_EVENT&#39;
+    SECURITY_ARM_STATE_EVENT      = &#39;SECURITY_ARM_STATE_EVENT&#39;
+    TIMER_EVENT                   = &#39;TIMER_EVENT&#39;
+    INSTALLED_APP_LIFECYCLE_EVENT = &#39;INSTALLED_APP_LIFECYCLE_EVENT&#39;
+    WEATHER_EVENT                 = &#39;WEATHER_EVENT&#39;
+
+class LifecycleBase(BaseModel):
+    lifecycle:    str
+    executionId:  Optional[str]
+    locale:       Optional[str]
+    version:      Optional[str]
+    settings:     Optional[Dict]
+
+class Phase(Enum):
+    initialize = &#39;INITIALIZE&#39;
+    page       = &#39;PAGE&#39;
+
+class Settings(BaseModel):
+    __root__: Dict[str, str]
+
+class Option(BaseModel):
+    id:   str
+    name: str
+
+Permissions  = List[str]
+Capabilities = List[str]
+Options      = List[Option]
+
+class SettingType(Enum):
+    STRING     = &#39;STRING&#39;
+    DEVICE     = &#39;DEVICE&#39;
+    PERMISSION = &#39;PERMISSION&#39;
+    MODE       = &#39;MODE&#39;
+    SCENE      = &#39;SCENE&#39;
+    MESSAGE    = &#39;MESSAGE&#39;
+    ENUM       = &#39;ENUM&#39;
+
+class SmartAppEventRequest(smartthings.SmartAppEventRequest):
+    pass
+
+class InitializeData(BaseModel):
+    name:           str
+    description:    str
+    id:             str
+    permissions:    Permissions
+    firstPageId:    str
+
+class PageSetting(BaseModel):
+    id:           str
+    name:         str
+    description:  Optional[str]
+    type:         SettingType
+    required:     bool
+    multiple:     bool
+    options:      Optional[Options]
+    capabilities: Optional[Capabilities]
+    permissions:  Optional[Permissions]
+
+class PageSection(BaseModel):
+    name: str
+    settings: Optional[List[PageSetting]]
+
+class PageData(BaseModel):
+    pageId:         str
+    name:           str
+    nextPageId:     Optional[str]
+    previousPageId: Optional[str]
+    complete:       bool
+    sections:       Optional[List[PageSection]]
+
+class ConfigurationData(BaseModel):
+    installedAppId: Optional[str]
+    phase:          Optional[Phase]
+    pageId:         Optional[str]
+    previousPageId: Optional[str]
+    config:         Optional[smartthings.ConfigMap]
+    permissions:    Optional[List[str]]
+    settings:       Optional[Settings]
+    initialize:     Optional[InitializeData]
+    page:           Optional[PageData]
+
+class ConfirmationData(BaseModel):
+    appId: str
+    confirmationUrl: str
+
+class InstalledApp(BaseModel):
+    installedAppId: Optional[str]
+    locationId:     Optional[str]
+    config:         smartthings.ConfigMap
+    permissions:    Optional[Permissions]
+    settings:       Optional[Settings]
+
+class InstallData(BaseModel):
+    authToken:    Optional[str]
+    refreshToken: Optional[str]
+    installedApp: Optional[InstalledApp]
+
+class UpdateData(BaseModel):
+    authToken:           Optional[str]
+    refreshToken:        Optional[str]
+    installedApp:        Optional[InstalledApp]
+    permissions:         Optional[Permissions]
+    previousConfig:      Optional[smartthings.ConfigMap]
+    previousPermissions: Optional[Permissions]
+
+class LifecycleEvent(BaseModel):
+    eventType:        smartthings.EventType
+    deviceEvent:      Optional[smartthings.DeviceSubscriptionDetail]
+    deviceLifecycle:  Optional[smartthings.DeviceLifecycleDetail]
+
+class EventData(BaseModel):
+    authToken:           Optional[str]
+    installedApp:        Optional[InstalledApp]
+    events:              Optional[List[LifecycleEvent]]
+
+class OAuthCallbackData(BaseModel):
+    installedAppId: str
+    urlPath:        str
+
+class UninstallData(BaseModel):
+    installedApp: Optional[InstalledApp]
+    settings:     Optional[Settings]
+
+class PingData(BaseModel):
+    challenge: str
+
+class Install(LifecycleBase):
+    installData: InstallData
+
+class Configuration(LifecycleBase):
+    configurationData: ConfigurationData
+
+class Confirmation(LifecycleBase):
+    confirmationData: ConfirmationData
+
+class Update(LifecycleBase):
+    updateData:   UpdateData
+    settings:     Optional[Settings]
+
+class Event(LifecycleBase):
+    eventData:    EventData
+    settings:     Optional[Settings]
+
+class DeviceEvent(BaseModel):
+    deviceId: str
+    event:    smartthings.DeviceStateEvent
+
+class LifecycleResponse(BaseModel):
+   targetUrl:          Optional[str]
+   installData:        Optional[InstallData]
+   updateData:         Optional[UpdateData]
+   eventData:          Optional[EventData]
+   oAuthCallbackData:  Optional[OAuthCallbackData]
+   uninstallData:      Optional[UninstallData]
+   configurationData:  Optional[ConfigurationData]
+   confirmationData:   Optional[ConfirmationData]
+   pingData:           Optional[PingData]
+
+class Device(smartthings.Device):
+    pass
+
+class UpdateDeviceRequest(smartthings.UpdateDeviceRequest):
+    pass
+
+class CreateInstalledAppEventRequest(smartthings.CreateInstalledAppEventsRequest):
+    pass
+
+class SmartAppEventRequest(smartthings.SmartAppEventRequest):
+    pass
+
+class DeviceStateEvent(smartthings.DeviceStateEvent):
+    pass
+
+class DeviceInstallRequest(smartthings.DeviceInstallRequest):
+    pass
+
+class Subscription(smartthings.Subscription):
+    pass
+
+class SubscriptionRequest(smartthings.Subscription):
+    pass
+
+class UpdateEvent(smartthings.DeviceStateEvent):
+    pass</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="smartapp.api.models.smartapp.Configuration"><code class="flex name class">
+<span>class <span class="ident">Configuration</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Configuration(LifecycleBase):
+    configurationData: ConfigurationData</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="smartapp.api.models.smartapp.LifecycleBase" href="#smartapp.api.models.smartapp.LifecycleBase">LifecycleBase</a></li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.Configuration.configurationData"><code class="name">var <span class="ident">configurationData</span> : <a title="smartapp.api.models.smartapp.ConfigurationData" href="#smartapp.api.models.smartapp.ConfigurationData">ConfigurationData</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.ConfigurationData"><code class="flex name class">
+<span>class <span class="ident">ConfigurationData</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ConfigurationData(BaseModel):
+    installedAppId: Optional[str]
+    phase:          Optional[Phase]
+    pageId:         Optional[str]
+    previousPageId: Optional[str]
+    config:         Optional[smartthings.ConfigMap]
+    permissions:    Optional[List[str]]
+    settings:       Optional[Settings]
+    initialize:     Optional[InitializeData]
+    page:           Optional[PageData]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.ConfigurationData</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.ConfigurationData.config"><code class="name">var <span class="ident">config</span> : Optional[smartapp.api.models.smartthings.ConfigMap]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.ConfigurationData.initialize"><code class="name">var <span class="ident">initialize</span> : Optional[<a title="smartapp.api.models.smartapp.InitializeData" href="#smartapp.api.models.smartapp.InitializeData">InitializeData</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.ConfigurationData.installedAppId"><code class="name">var <span class="ident">installedAppId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.ConfigurationData.page"><code class="name">var <span class="ident">page</span> : Optional[<a title="smartapp.api.models.smartapp.PageData" href="#smartapp.api.models.smartapp.PageData">PageData</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.ConfigurationData.pageId"><code class="name">var <span class="ident">pageId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.ConfigurationData.permissions"><code class="name">var <span class="ident">permissions</span> : Optional[List[str]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.ConfigurationData.phase"><code class="name">var <span class="ident">phase</span> : Optional[<a title="smartapp.api.models.smartapp.Phase" href="#smartapp.api.models.smartapp.Phase">Phase</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.ConfigurationData.previousPageId"><code class="name">var <span class="ident">previousPageId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.ConfigurationData.settings"><code class="name">var <span class="ident">settings</span> : Optional[<a title="smartapp.api.models.smartapp.Settings" href="#smartapp.api.models.smartapp.Settings">Settings</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.Confirmation"><code class="flex name class">
+<span>class <span class="ident">Confirmation</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Confirmation(LifecycleBase):
+    confirmationData: ConfirmationData</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="smartapp.api.models.smartapp.LifecycleBase" href="#smartapp.api.models.smartapp.LifecycleBase">LifecycleBase</a></li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.Confirmation.confirmationData"><code class="name">var <span class="ident">confirmationData</span> : <a title="smartapp.api.models.smartapp.ConfirmationData" href="#smartapp.api.models.smartapp.ConfirmationData">ConfirmationData</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.ConfirmationData"><code class="flex name class">
+<span>class <span class="ident">ConfirmationData</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ConfirmationData(BaseModel):
+    appId: str
+    confirmationUrl: str</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.ConfirmationData</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.ConfirmationData.appId"><code class="name">var <span class="ident">appId</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.ConfirmationData.confirmationUrl"><code class="name">var <span class="ident">confirmationUrl</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.CreateInstalledAppEventRequest"><code class="flex name class">
+<span>class <span class="ident">CreateInstalledAppEventRequest</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CreateInstalledAppEventRequest(smartthings.CreateInstalledAppEventsRequest):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>smartapp.api.models.smartthings.CreateInstalledAppEventsRequest</li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.CreateInstalledAppEventRequest.smartAppDashboardCardEvents"><code class="name">var <span class="ident">smartAppDashboardCardEvents</span> : Optional[List[smartapp.api.models.smartthings.SmartAppDashboardCardEventRequest]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.CreateInstalledAppEventRequest.smartAppEvents"><code class="name">var <span class="ident">smartAppEvents</span> : Optional[List[smartapp.api.models.smartthings.SmartAppEventRequest]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device"><code class="flex name class">
+<span>class <span class="ident">Device</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Device(smartthings.Device):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>smartapp.api.models.smartthings.Device</li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.Device.app"><code class="name">var <span class="ident">app</span> : Optional[smartapp.api.models.smartthings.AppDeviceDetails]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.ble"><code class="name">var <span class="ident">ble</span> : Optional[smartapp.api.models.smartthings.BleDeviceDetails]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.bleD2D"><code class="name">var <span class="ident">bleD2D</span> : Optional[smartapp.api.models.smartthings.BleD2DDeviceDetails]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.childDevices"><code class="name">var <span class="ident">childDevices</span> : Optional[List[smartapp.api.models.smartthings.Device]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.components"><code class="name">var <span class="ident">components</span> : Optional[List[smartapp.api.models.smartthings.DeviceComponent]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.createTime"><code class="name">var <span class="ident">createTime</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.deviceId"><code class="name">var <span class="ident">deviceId</span> : smartapp.api.models.smartthings.DeviceId</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.deviceManufacturerCode"><code class="name">var <span class="ident">deviceManufacturerCode</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.deviceNetworkType"><code class="name">var <span class="ident">deviceNetworkType</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.deviceTypeId"><code class="name">var <span class="ident">deviceTypeId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.deviceTypeName"><code class="name">var <span class="ident">deviceTypeName</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.dth"><code class="name">var <span class="ident">dth</span> : Optional[smartapp.api.models.smartthings.DthDeviceDetails]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.ir"><code class="name">var <span class="ident">ir</span> : Optional[smartapp.api.models.smartthings.IrDeviceDetails]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.irOcf"><code class="name">var <span class="ident">irOcf</span> : Optional[smartapp.api.models.smartthings.IrDeviceDetails]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.label"><code class="name">var <span class="ident">label</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.lan"><code class="name">var <span class="ident">lan</span> : Optional[smartapp.api.models.smartthings.LanDeviceDetails]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.locationId"><code class="name">var <span class="ident">locationId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.manufacturerName"><code class="name">var <span class="ident">manufacturerName</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.matter"><code class="name">var <span class="ident">matter</span> : Optional[smartapp.api.models.smartthings.MatterDeviceDetails]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.name"><code class="name">var <span class="ident">name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.ocf"><code class="name">var <span class="ident">ocf</span> : Optional[smartapp.api.models.smartthings.OcfDeviceDetails]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.ownerId"><code class="name">var <span class="ident">ownerId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.parentDeviceId"><code class="name">var <span class="ident">parentDeviceId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.presentationId"><code class="name">var <span class="ident">presentationId</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.profile"><code class="name">var <span class="ident">profile</span> : Optional[smartapp.api.models.smartthings.DeviceProfileReference]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.restrictionTier"><code class="name">var <span class="ident">restrictionTier</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.roomId"><code class="name">var <span class="ident">roomId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.type"><code class="name">var <span class="ident">type</span> : smartapp.api.models.smartthings.DeviceIntegrationType</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.viper"><code class="name">var <span class="ident">viper</span> : Optional[smartapp.api.models.smartthings.ViperDeviceDetails]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.zigbee"><code class="name">var <span class="ident">zigbee</span> : Optional[smartapp.api.models.smartthings.ZigbeeDeviceDetails]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Device.zwave"><code class="name">var <span class="ident">zwave</span> : Optional[smartapp.api.models.smartthings.ZwaveDeviceDetails]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.DeviceEvent"><code class="flex name class">
+<span>class <span class="ident">DeviceEvent</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DeviceEvent(BaseModel):
+    deviceId: str
+    event:    smartthings.DeviceStateEvent</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.DeviceEvent.deviceId"><code class="name">var <span class="ident">deviceId</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.DeviceEvent.event"><code class="name">var <span class="ident">event</span> : smartapp.api.models.smartthings.DeviceStateEvent</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.DeviceInstallRequest"><code class="flex name class">
+<span>class <span class="ident">DeviceInstallRequest</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DeviceInstallRequest(smartthings.DeviceInstallRequest):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>smartapp.api.models.smartthings.DeviceInstallRequest</li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.DeviceInstallRequest.app"><code class="name">var <span class="ident">app</span> : smartapp.api.models.smartthings.App</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.DeviceInstallRequest.label"><code class="name">var <span class="ident">label</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.DeviceInstallRequest.locationId"><code class="name">var <span class="ident">locationId</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.DeviceInstallRequest.roomId"><code class="name">var <span class="ident">roomId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.DeviceStateEvent"><code class="flex name class">
+<span>class <span class="ident">DeviceStateEvent</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DeviceStateEvent(smartthings.DeviceStateEvent):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>smartapp.api.models.smartthings.DeviceStateEvent</li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.DeviceStateEvent.attribute"><code class="name">var <span class="ident">attribute</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.DeviceStateEvent.capability"><code class="name">var <span class="ident">capability</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.DeviceStateEvent.component"><code class="name">var <span class="ident">component</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.DeviceStateEvent.data"><code class="name">var <span class="ident">data</span> : Optional[Dict[str, Dict[str, Any]]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.DeviceStateEvent.unit"><code class="name">var <span class="ident">unit</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.DeviceStateEvent.value"><code class="name">var <span class="ident">value</span> : Any</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.Event"><code class="flex name class">
+<span>class <span class="ident">Event</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Event(LifecycleBase):
+    eventData:    EventData
+    settings:     Optional[Settings]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="smartapp.api.models.smartapp.LifecycleBase" href="#smartapp.api.models.smartapp.LifecycleBase">LifecycleBase</a></li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.Event.eventData"><code class="name">var <span class="ident">eventData</span> : <a title="smartapp.api.models.smartapp.EventData" href="#smartapp.api.models.smartapp.EventData">EventData</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Event.settings"><code class="name">var <span class="ident">settings</span> : Optional[<a title="smartapp.api.models.smartapp.Settings" href="#smartapp.api.models.smartapp.Settings">Settings</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventData"><code class="flex name class">
+<span>class <span class="ident">EventData</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EventData(BaseModel):
+    authToken:           Optional[str]
+    installedApp:        Optional[InstalledApp]
+    events:              Optional[List[LifecycleEvent]]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.EventData</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.EventData.authToken"><code class="name">var <span class="ident">authToken</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventData.events"><code class="name">var <span class="ident">events</span> : Optional[List[<a title="smartapp.api.models.smartapp.LifecycleEvent" href="#smartapp.api.models.smartapp.LifecycleEvent">LifecycleEvent</a>]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventData.installedApp"><code class="name">var <span class="ident">installedApp</span> : Optional[<a title="smartapp.api.models.smartapp.InstalledApp" href="#smartapp.api.models.smartapp.InstalledApp">InstalledApp</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventType"><code class="flex name class">
+<span>class <span class="ident">EventType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EventType(Enum):
+    DEVICE_COMMANDS_EVENT         = &#39;DEVICE_COMMANDS_EVENT&#39;
+    DEVICE_EVENT                  = &#39;DEVICE_EVENT&#39;
+    DEVICE_HEALTH_EVENT           = &#39;DEVICE_HEALTH_EVENT&#39;
+    DEVICE_LIFECYCLE_EVENT        = &#39;DEVICE_LIFECYCLE_EVENT&#39;
+    HUB_HEALTH_EVENT              = &#39;HUB_HEALTH_EVENT&#39;
+    MODE_EVENT                    = &#39;MODE_EVENT&#39;
+    SCENE_LIFECYCLE_EVENT         = &#39;SCENE_LIFECYCLE_EVENT&#39;
+    SECURITY_ARM_STATE_EVENT      = &#39;SECURITY_ARM_STATE_EVENT&#39;
+    TIMER_EVENT                   = &#39;TIMER_EVENT&#39;
+    INSTALLED_APP_LIFECYCLE_EVENT = &#39;INSTALLED_APP_LIFECYCLE_EVENT&#39;
+    WEATHER_EVENT                 = &#39;WEATHER_EVENT&#39;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.EventType.DEVICE_COMMANDS_EVENT"><code class="name">var <span class="ident">DEVICE_COMMANDS_EVENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventType.DEVICE_EVENT"><code class="name">var <span class="ident">DEVICE_EVENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventType.DEVICE_HEALTH_EVENT"><code class="name">var <span class="ident">DEVICE_HEALTH_EVENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventType.DEVICE_LIFECYCLE_EVENT"><code class="name">var <span class="ident">DEVICE_LIFECYCLE_EVENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventType.HUB_HEALTH_EVENT"><code class="name">var <span class="ident">HUB_HEALTH_EVENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventType.INSTALLED_APP_LIFECYCLE_EVENT"><code class="name">var <span class="ident">INSTALLED_APP_LIFECYCLE_EVENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventType.MODE_EVENT"><code class="name">var <span class="ident">MODE_EVENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventType.SCENE_LIFECYCLE_EVENT"><code class="name">var <span class="ident">SCENE_LIFECYCLE_EVENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventType.SECURITY_ARM_STATE_EVENT"><code class="name">var <span class="ident">SECURITY_ARM_STATE_EVENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventType.TIMER_EVENT"><code class="name">var <span class="ident">TIMER_EVENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.EventType.WEATHER_EVENT"><code class="name">var <span class="ident">WEATHER_EVENT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.InitializeData"><code class="flex name class">
+<span>class <span class="ident">InitializeData</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InitializeData(BaseModel):
+    name:           str
+    description:    str
+    id:             str
+    permissions:    Permissions
+    firstPageId:    str</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.InitializeData</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.InitializeData.description"><code class="name">var <span class="ident">description</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.InitializeData.firstPageId"><code class="name">var <span class="ident">firstPageId</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.InitializeData.id"><code class="name">var <span class="ident">id</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.InitializeData.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.InitializeData.permissions"><code class="name">var <span class="ident">permissions</span> : List[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.Install"><code class="flex name class">
+<span>class <span class="ident">Install</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Install(LifecycleBase):
+    installData: InstallData</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="smartapp.api.models.smartapp.LifecycleBase" href="#smartapp.api.models.smartapp.LifecycleBase">LifecycleBase</a></li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.Install.installData"><code class="name">var <span class="ident">installData</span> : <a title="smartapp.api.models.smartapp.InstallData" href="#smartapp.api.models.smartapp.InstallData">InstallData</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.InstallData"><code class="flex name class">
+<span>class <span class="ident">InstallData</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InstallData(BaseModel):
+    authToken:    Optional[str]
+    refreshToken: Optional[str]
+    installedApp: Optional[InstalledApp]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.InstallData</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.InstallData.authToken"><code class="name">var <span class="ident">authToken</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.InstallData.installedApp"><code class="name">var <span class="ident">installedApp</span> : Optional[<a title="smartapp.api.models.smartapp.InstalledApp" href="#smartapp.api.models.smartapp.InstalledApp">InstalledApp</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.InstallData.refreshToken"><code class="name">var <span class="ident">refreshToken</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.InstalledApp"><code class="flex name class">
+<span>class <span class="ident">InstalledApp</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InstalledApp(BaseModel):
+    installedAppId: Optional[str]
+    locationId:     Optional[str]
+    config:         smartthings.ConfigMap
+    permissions:    Optional[Permissions]
+    settings:       Optional[Settings]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.InstalledApp</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.InstalledApp.config"><code class="name">var <span class="ident">config</span> : smartapp.api.models.smartthings.ConfigMap</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.InstalledApp.installedAppId"><code class="name">var <span class="ident">installedAppId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.InstalledApp.locationId"><code class="name">var <span class="ident">locationId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.InstalledApp.permissions"><code class="name">var <span class="ident">permissions</span> : Optional[List[str]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.InstalledApp.settings"><code class="name">var <span class="ident">settings</span> : Optional[<a title="smartapp.api.models.smartapp.Settings" href="#smartapp.api.models.smartapp.Settings">Settings</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleBase"><code class="flex name class">
+<span>class <span class="ident">LifecycleBase</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class LifecycleBase(BaseModel):
+    lifecycle:    str
+    executionId:  Optional[str]
+    locale:       Optional[str]
+    version:      Optional[str]
+    settings:     Optional[Dict]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="smartapp.api.models.AllLifecycles" href="index.html#smartapp.api.models.AllLifecycles">AllLifecycles</a></li>
+<li><a title="smartapp.api.models.smartapp.Configuration" href="#smartapp.api.models.smartapp.Configuration">Configuration</a></li>
+<li><a title="smartapp.api.models.smartapp.Confirmation" href="#smartapp.api.models.smartapp.Confirmation">Confirmation</a></li>
+<li><a title="smartapp.api.models.smartapp.Event" href="#smartapp.api.models.smartapp.Event">Event</a></li>
+<li><a title="smartapp.api.models.smartapp.Install" href="#smartapp.api.models.smartapp.Install">Install</a></li>
+<li><a title="smartapp.api.models.smartapp.Update" href="#smartapp.api.models.smartapp.Update">Update</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.LifecycleBase.executionId"><code class="name">var <span class="ident">executionId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleBase.lifecycle"><code class="name">var <span class="ident">lifecycle</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleBase.locale"><code class="name">var <span class="ident">locale</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleBase.settings"><code class="name">var <span class="ident">settings</span> : Optional[Dict[~KT, ~VT]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleBase.version"><code class="name">var <span class="ident">version</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleEvent"><code class="flex name class">
+<span>class <span class="ident">LifecycleEvent</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class LifecycleEvent(BaseModel):
+    eventType:        smartthings.EventType
+    deviceEvent:      Optional[smartthings.DeviceSubscriptionDetail]
+    deviceLifecycle:  Optional[smartthings.DeviceLifecycleDetail]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.LifecycleEvent</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.LifecycleEvent.deviceEvent"><code class="name">var <span class="ident">deviceEvent</span> : Optional[smartapp.api.models.smartthings.DeviceSubscriptionDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleEvent.deviceLifecycle"><code class="name">var <span class="ident">deviceLifecycle</span> : Optional[smartapp.api.models.smartthings.DeviceLifecycleDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleEvent.eventType"><code class="name">var <span class="ident">eventType</span> : smartapp.api.models.smartthings.EventType</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleResponse"><code class="flex name class">
+<span>class <span class="ident">LifecycleResponse</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class LifecycleResponse(BaseModel):
+   targetUrl:          Optional[str]
+   installData:        Optional[InstallData]
+   updateData:         Optional[UpdateData]
+   eventData:          Optional[EventData]
+   oAuthCallbackData:  Optional[OAuthCallbackData]
+   uninstallData:      Optional[UninstallData]
+   configurationData:  Optional[ConfigurationData]
+   confirmationData:   Optional[ConfirmationData]
+   pingData:           Optional[PingData]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.LifecycleResponse</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.LifecycleResponse.configurationData"><code class="name">var <span class="ident">configurationData</span> : Optional[<a title="smartapp.api.models.smartapp.ConfigurationData" href="#smartapp.api.models.smartapp.ConfigurationData">ConfigurationData</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleResponse.confirmationData"><code class="name">var <span class="ident">confirmationData</span> : Optional[<a title="smartapp.api.models.smartapp.ConfirmationData" href="#smartapp.api.models.smartapp.ConfirmationData">ConfirmationData</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleResponse.eventData"><code class="name">var <span class="ident">eventData</span> : Optional[<a title="smartapp.api.models.smartapp.EventData" href="#smartapp.api.models.smartapp.EventData">EventData</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleResponse.installData"><code class="name">var <span class="ident">installData</span> : Optional[<a title="smartapp.api.models.smartapp.InstallData" href="#smartapp.api.models.smartapp.InstallData">InstallData</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleResponse.oAuthCallbackData"><code class="name">var <span class="ident">oAuthCallbackData</span> : Optional[<a title="smartapp.api.models.smartapp.OAuthCallbackData" href="#smartapp.api.models.smartapp.OAuthCallbackData">OAuthCallbackData</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleResponse.pingData"><code class="name">var <span class="ident">pingData</span> : Optional[<a title="smartapp.api.models.smartapp.PingData" href="#smartapp.api.models.smartapp.PingData">PingData</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleResponse.targetUrl"><code class="name">var <span class="ident">targetUrl</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleResponse.uninstallData"><code class="name">var <span class="ident">uninstallData</span> : Optional[<a title="smartapp.api.models.smartapp.UninstallData" href="#smartapp.api.models.smartapp.UninstallData">UninstallData</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleResponse.updateData"><code class="name">var <span class="ident">updateData</span> : Optional[<a title="smartapp.api.models.smartapp.UpdateData" href="#smartapp.api.models.smartapp.UpdateData">UpdateData</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleType"><code class="flex name class">
+<span>class <span class="ident">LifecycleType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class LifecycleType(Enum):
+    configuration   = &#39;CONFIGURATION&#39;
+    install         = &#39;INSTALL&#39;
+    update          = &#39;UPDATE&#39;
+    event           = &#39;EVENT&#39;
+    oauth_callback  = &#39;OAUTH_CALLBACK&#39;
+    uninstall       = &#39;UNINSTALL&#39;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.LifecycleType.configuration"><code class="name">var <span class="ident">configuration</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleType.event"><code class="name">var <span class="ident">event</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleType.install"><code class="name">var <span class="ident">install</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleType.oauth_callback"><code class="name">var <span class="ident">oauth_callback</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleType.uninstall"><code class="name">var <span class="ident">uninstall</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.LifecycleType.update"><code class="name">var <span class="ident">update</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.OAuthCallbackData"><code class="flex name class">
+<span>class <span class="ident">OAuthCallbackData</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class OAuthCallbackData(BaseModel):
+    installedAppId: str
+    urlPath:        str</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.OAuthCallbackData</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.OAuthCallbackData.installedAppId"><code class="name">var <span class="ident">installedAppId</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.OAuthCallbackData.urlPath"><code class="name">var <span class="ident">urlPath</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.Option"><code class="flex name class">
+<span>class <span class="ident">Option</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Option(BaseModel):
+    id:   str
+    name: str</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.Option</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.Option.id"><code class="name">var <span class="ident">id</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Option.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageData"><code class="flex name class">
+<span>class <span class="ident">PageData</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PageData(BaseModel):
+    pageId:         str
+    name:           str
+    nextPageId:     Optional[str]
+    previousPageId: Optional[str]
+    complete:       bool
+    sections:       Optional[List[PageSection]]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.PageData</li>
+<li><a title="smartapp.api.smartapp.configuration.Page" href="../smartapp/configuration.html#smartapp.api.smartapp.configuration.Page">Page</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.PageData.complete"><code class="name">var <span class="ident">complete</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageData.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageData.nextPageId"><code class="name">var <span class="ident">nextPageId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageData.pageId"><code class="name">var <span class="ident">pageId</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageData.previousPageId"><code class="name">var <span class="ident">previousPageId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageData.sections"><code class="name">var <span class="ident">sections</span> : Optional[List[<a title="smartapp.api.models.smartapp.PageSection" href="#smartapp.api.models.smartapp.PageSection">PageSection</a>]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageSection"><code class="flex name class">
+<span>class <span class="ident">PageSection</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PageSection(BaseModel):
+    name: str
+    settings: Optional[List[PageSetting]]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.PageSection</li>
+<li><a title="smartapp.api.smartapp.configuration.Section" href="../smartapp/configuration.html#smartapp.api.smartapp.configuration.Section">Section</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.PageSection.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageSection.settings"><code class="name">var <span class="ident">settings</span> : Optional[List[<a title="smartapp.api.models.smartapp.PageSetting" href="#smartapp.api.models.smartapp.PageSetting">PageSetting</a>]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageSetting"><code class="flex name class">
+<span>class <span class="ident">PageSetting</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PageSetting(BaseModel):
+    id:           str
+    name:         str
+    description:  Optional[str]
+    type:         SettingType
+    required:     bool
+    multiple:     bool
+    options:      Optional[Options]
+    capabilities: Optional[Capabilities]
+    permissions:  Optional[Permissions]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.PageSetting</li>
+<li><a title="smartapp.api.smartapp.configuration.Setting" href="../smartapp/configuration.html#smartapp.api.smartapp.configuration.Setting">Setting</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.PageSetting.capabilities"><code class="name">var <span class="ident">capabilities</span> : Optional[List[str]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageSetting.description"><code class="name">var <span class="ident">description</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageSetting.id"><code class="name">var <span class="ident">id</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageSetting.multiple"><code class="name">var <span class="ident">multiple</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageSetting.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageSetting.options"><code class="name">var <span class="ident">options</span> : Optional[List[<a title="smartapp.api.models.smartapp.Option" href="#smartapp.api.models.smartapp.Option">Option</a>]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageSetting.permissions"><code class="name">var <span class="ident">permissions</span> : Optional[List[str]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageSetting.required"><code class="name">var <span class="ident">required</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.PageSetting.type"><code class="name">var <span class="ident">type</span> : <a title="smartapp.api.models.smartapp.SettingType" href="#smartapp.api.models.smartapp.SettingType">SettingType</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.Phase"><code class="flex name class">
+<span>class <span class="ident">Phase</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Phase(Enum):
+    initialize = &#39;INITIALIZE&#39;
+    page       = &#39;PAGE&#39;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.Phase.initialize"><code class="name">var <span class="ident">initialize</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Phase.page"><code class="name">var <span class="ident">page</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.PingData"><code class="flex name class">
+<span>class <span class="ident">PingData</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PingData(BaseModel):
+    challenge: str</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.PingData</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.PingData.challenge"><code class="name">var <span class="ident">challenge</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.SettingType"><code class="flex name class">
+<span>class <span class="ident">SettingType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SettingType(Enum):
+    STRING     = &#39;STRING&#39;
+    DEVICE     = &#39;DEVICE&#39;
+    PERMISSION = &#39;PERMISSION&#39;
+    MODE       = &#39;MODE&#39;
+    SCENE      = &#39;SCENE&#39;
+    MESSAGE    = &#39;MESSAGE&#39;
+    ENUM       = &#39;ENUM&#39;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.SettingType.DEVICE"><code class="name">var <span class="ident">DEVICE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SettingType.ENUM"><code class="name">var <span class="ident">ENUM</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SettingType.MESSAGE"><code class="name">var <span class="ident">MESSAGE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SettingType.MODE"><code class="name">var <span class="ident">MODE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SettingType.PERMISSION"><code class="name">var <span class="ident">PERMISSION</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SettingType.SCENE"><code class="name">var <span class="ident">SCENE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SettingType.STRING"><code class="name">var <span class="ident">STRING</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.Settings"><code class="flex name class">
+<span>class <span class="ident">Settings</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Settings(BaseModel):
+    __root__: Dict[str, str]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.Settings</li>
+</ul>
+</dd>
+<dt id="smartapp.api.models.smartapp.SmartAppEventRequest"><code class="flex name class">
+<span>class <span class="ident">SmartAppEventRequest</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SmartAppEventRequest(smartthings.SmartAppEventRequest):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>smartapp.api.models.smartthings.SmartAppEventRequest</li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.SmartAppEventRequest.attributes"><code class="name">var <span class="ident">attributes</span> : Optional[Dict[str, str]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SmartAppEventRequest.name"><code class="name">var <span class="ident">name</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.Subscription"><code class="flex name class">
+<span>class <span class="ident">Subscription</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Subscription(smartthings.Subscription):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>smartapp.api.models.smartthings.Subscription</li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.Subscription.capability"><code class="name">var <span class="ident">capability</span> : Optional[smartapp.api.models.smartthings.CapabilitySubscriptionDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Subscription.device"><code class="name">var <span class="ident">device</span> : Optional[smartapp.api.models.smartthings.DeviceSubscriptionDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Subscription.deviceHealth"><code class="name">var <span class="ident">deviceHealth</span> : Optional[smartapp.api.models.smartthings.DeviceHealthDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Subscription.deviceLifecycle"><code class="name">var <span class="ident">deviceLifecycle</span> : Optional[smartapp.api.models.smartthings.DeviceLifecycleDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Subscription.hubHealth"><code class="name">var <span class="ident">hubHealth</span> : Optional[smartapp.api.models.smartthings.HubHealthDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Subscription.id"><code class="name">var <span class="ident">id</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Subscription.installedAppId"><code class="name">var <span class="ident">installedAppId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Subscription.mode"><code class="name">var <span class="ident">mode</span> : Optional[smartapp.api.models.smartthings.ModeSubscriptionDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Subscription.sceneLifecycle"><code class="name">var <span class="ident">sceneLifecycle</span> : Optional[smartapp.api.models.smartthings.SceneLifecycleDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Subscription.securityArmState"><code class="name">var <span class="ident">securityArmState</span> : Optional[smartapp.api.models.smartthings.SecurityArmStateDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Subscription.sourceType"><code class="name">var <span class="ident">sourceType</span> : Optional[smartapp.api.models.smartthings.SubscriptionSource]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionRequest"><code class="flex name class">
+<span>class <span class="ident">SubscriptionRequest</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SubscriptionRequest(smartthings.Subscription):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>smartapp.api.models.smartthings.Subscription</li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.SubscriptionRequest.capability"><code class="name">var <span class="ident">capability</span> : Optional[smartapp.api.models.smartthings.CapabilitySubscriptionDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionRequest.device"><code class="name">var <span class="ident">device</span> : Optional[smartapp.api.models.smartthings.DeviceSubscriptionDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionRequest.deviceHealth"><code class="name">var <span class="ident">deviceHealth</span> : Optional[smartapp.api.models.smartthings.DeviceHealthDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionRequest.deviceLifecycle"><code class="name">var <span class="ident">deviceLifecycle</span> : Optional[smartapp.api.models.smartthings.DeviceLifecycleDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionRequest.hubHealth"><code class="name">var <span class="ident">hubHealth</span> : Optional[smartapp.api.models.smartthings.HubHealthDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionRequest.id"><code class="name">var <span class="ident">id</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionRequest.installedAppId"><code class="name">var <span class="ident">installedAppId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionRequest.mode"><code class="name">var <span class="ident">mode</span> : Optional[smartapp.api.models.smartthings.ModeSubscriptionDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionRequest.sceneLifecycle"><code class="name">var <span class="ident">sceneLifecycle</span> : Optional[smartapp.api.models.smartthings.SceneLifecycleDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionRequest.securityArmState"><code class="name">var <span class="ident">securityArmState</span> : Optional[smartapp.api.models.smartthings.SecurityArmStateDetail]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionRequest.sourceType"><code class="name">var <span class="ident">sourceType</span> : Optional[smartapp.api.models.smartthings.SubscriptionSource]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionType"><code class="flex name class">
+<span>class <span class="ident">SubscriptionType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SubscriptionType(Enum):
+    DEVICE             = &#39;DEVICE&#39;
+    CAPABILITY         = &#39;CAPABILITY&#39;
+    MODE               = &#39;MODE&#39;
+    DEVICE_LIFECYCLE   = &#39;DEVICE_LIFECYCLE&#39;
+    DEVICE_HEALTH      = &#39;DEVICE_HEALTH&#39;
+    SECURITY_ARM_STATE = &#39;SECURITY_ARM_STATE&#39;
+    HUB_HEALTH         = &#39;HUB_HEALTH&#39;
+    SCENE_LIFECYCLE    = &#39;SCENE_LIFECYCLE&#39;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.SubscriptionType.CAPABILITY"><code class="name">var <span class="ident">CAPABILITY</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionType.DEVICE"><code class="name">var <span class="ident">DEVICE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionType.DEVICE_HEALTH"><code class="name">var <span class="ident">DEVICE_HEALTH</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionType.DEVICE_LIFECYCLE"><code class="name">var <span class="ident">DEVICE_LIFECYCLE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionType.HUB_HEALTH"><code class="name">var <span class="ident">HUB_HEALTH</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionType.MODE"><code class="name">var <span class="ident">MODE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionType.SCENE_LIFECYCLE"><code class="name">var <span class="ident">SCENE_LIFECYCLE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.SubscriptionType.SECURITY_ARM_STATE"><code class="name">var <span class="ident">SECURITY_ARM_STATE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.UninstallData"><code class="flex name class">
+<span>class <span class="ident">UninstallData</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UninstallData(BaseModel):
+    installedApp: Optional[InstalledApp]
+    settings:     Optional[Settings]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.UninstallData</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.UninstallData.installedApp"><code class="name">var <span class="ident">installedApp</span> : Optional[<a title="smartapp.api.models.smartapp.InstalledApp" href="#smartapp.api.models.smartapp.InstalledApp">InstalledApp</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UninstallData.settings"><code class="name">var <span class="ident">settings</span> : Optional[<a title="smartapp.api.models.smartapp.Settings" href="#smartapp.api.models.smartapp.Settings">Settings</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.Update"><code class="flex name class">
+<span>class <span class="ident">Update</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Update(LifecycleBase):
+    updateData:   UpdateData
+    settings:     Optional[Settings]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="smartapp.api.models.smartapp.LifecycleBase" href="#smartapp.api.models.smartapp.LifecycleBase">LifecycleBase</a></li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.Update.settings"><code class="name">var <span class="ident">settings</span> : Optional[<a title="smartapp.api.models.smartapp.Settings" href="#smartapp.api.models.smartapp.Settings">Settings</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.Update.updateData"><code class="name">var <span class="ident">updateData</span> : <a title="smartapp.api.models.smartapp.UpdateData" href="#smartapp.api.models.smartapp.UpdateData">UpdateData</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateData"><code class="flex name class">
+<span>class <span class="ident">UpdateData</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UpdateData(BaseModel):
+    authToken:           Optional[str]
+    refreshToken:        Optional[str]
+    installedApp:        Optional[InstalledApp]
+    permissions:         Optional[Permissions]
+    previousConfig:      Optional[smartthings.ConfigMap]
+    previousPermissions: Optional[Permissions]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li>pydantic.main.UpdateData</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.UpdateData.authToken"><code class="name">var <span class="ident">authToken</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateData.installedApp"><code class="name">var <span class="ident">installedApp</span> : Optional[<a title="smartapp.api.models.smartapp.InstalledApp" href="#smartapp.api.models.smartapp.InstalledApp">InstalledApp</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateData.permissions"><code class="name">var <span class="ident">permissions</span> : Optional[List[str]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateData.previousConfig"><code class="name">var <span class="ident">previousConfig</span> : Optional[smartapp.api.models.smartthings.ConfigMap]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateData.previousPermissions"><code class="name">var <span class="ident">previousPermissions</span> : Optional[List[str]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateData.refreshToken"><code class="name">var <span class="ident">refreshToken</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateDeviceRequest"><code class="flex name class">
+<span>class <span class="ident">UpdateDeviceRequest</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UpdateDeviceRequest(smartthings.UpdateDeviceRequest):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>smartapp.api.models.smartthings.UpdateDeviceRequest</li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.UpdateDeviceRequest.components"><code class="name">var <span class="ident">components</span> : Optional[List[smartapp.api.models.smartthings.UpdateDeviceComponent]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateDeviceRequest.label"><code class="name">var <span class="ident">label</span> : Optional[smartapp.api.models.smartthings.ConstrainedStrValue]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateDeviceRequest.locationId"><code class="name">var <span class="ident">locationId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateDeviceRequest.roomId"><code class="name">var <span class="ident">roomId</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateEvent"><code class="flex name class">
+<span>class <span class="ident">UpdateEvent</span></span>
+<span>(</span><span>**data: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
+<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UpdateEvent(smartthings.DeviceStateEvent):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>smartapp.api.models.smartthings.DeviceStateEvent</li>
+<li>pydantic.main.BaseModel</li>
+<li>pydantic.utils.Representation</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="smartapp.api.models.smartapp.UpdateEvent.attribute"><code class="name">var <span class="ident">attribute</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateEvent.capability"><code class="name">var <span class="ident">capability</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateEvent.component"><code class="name">var <span class="ident">component</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateEvent.data"><code class="name">var <span class="ident">data</span> : Optional[Dict[str, Dict[str, Any]]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateEvent.unit"><code class="name">var <span class="ident">unit</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="smartapp.api.models.smartapp.UpdateEvent.value"><code class="name">var <span class="ident">value</span> : Any</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="smartapp.api.models" href="index.html">smartapp.api.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.Configuration" href="#smartapp.api.models.smartapp.Configuration">Configuration</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.Configuration.configurationData" href="#smartapp.api.models.smartapp.Configuration.configurationData">configurationData</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.ConfigurationData" href="#smartapp.api.models.smartapp.ConfigurationData">ConfigurationData</a></code></h4>
+<ul class="two-column">
+<li><code><a title="smartapp.api.models.smartapp.ConfigurationData.config" href="#smartapp.api.models.smartapp.ConfigurationData.config">config</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.ConfigurationData.initialize" href="#smartapp.api.models.smartapp.ConfigurationData.initialize">initialize</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.ConfigurationData.installedAppId" href="#smartapp.api.models.smartapp.ConfigurationData.installedAppId">installedAppId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.ConfigurationData.page" href="#smartapp.api.models.smartapp.ConfigurationData.page">page</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.ConfigurationData.pageId" href="#smartapp.api.models.smartapp.ConfigurationData.pageId">pageId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.ConfigurationData.permissions" href="#smartapp.api.models.smartapp.ConfigurationData.permissions">permissions</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.ConfigurationData.phase" href="#smartapp.api.models.smartapp.ConfigurationData.phase">phase</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.ConfigurationData.previousPageId" href="#smartapp.api.models.smartapp.ConfigurationData.previousPageId">previousPageId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.ConfigurationData.settings" href="#smartapp.api.models.smartapp.ConfigurationData.settings">settings</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.Confirmation" href="#smartapp.api.models.smartapp.Confirmation">Confirmation</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.Confirmation.confirmationData" href="#smartapp.api.models.smartapp.Confirmation.confirmationData">confirmationData</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.ConfirmationData" href="#smartapp.api.models.smartapp.ConfirmationData">ConfirmationData</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.ConfirmationData.appId" href="#smartapp.api.models.smartapp.ConfirmationData.appId">appId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.ConfirmationData.confirmationUrl" href="#smartapp.api.models.smartapp.ConfirmationData.confirmationUrl">confirmationUrl</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.CreateInstalledAppEventRequest" href="#smartapp.api.models.smartapp.CreateInstalledAppEventRequest">CreateInstalledAppEventRequest</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.CreateInstalledAppEventRequest.smartAppDashboardCardEvents" href="#smartapp.api.models.smartapp.CreateInstalledAppEventRequest.smartAppDashboardCardEvents">smartAppDashboardCardEvents</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.CreateInstalledAppEventRequest.smartAppEvents" href="#smartapp.api.models.smartapp.CreateInstalledAppEventRequest.smartAppEvents">smartAppEvents</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.Device" href="#smartapp.api.models.smartapp.Device">Device</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.Device.app" href="#smartapp.api.models.smartapp.Device.app">app</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.ble" href="#smartapp.api.models.smartapp.Device.ble">ble</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.bleD2D" href="#smartapp.api.models.smartapp.Device.bleD2D">bleD2D</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.childDevices" href="#smartapp.api.models.smartapp.Device.childDevices">childDevices</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.components" href="#smartapp.api.models.smartapp.Device.components">components</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.createTime" href="#smartapp.api.models.smartapp.Device.createTime">createTime</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.deviceId" href="#smartapp.api.models.smartapp.Device.deviceId">deviceId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.deviceManufacturerCode" href="#smartapp.api.models.smartapp.Device.deviceManufacturerCode">deviceManufacturerCode</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.deviceNetworkType" href="#smartapp.api.models.smartapp.Device.deviceNetworkType">deviceNetworkType</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.deviceTypeId" href="#smartapp.api.models.smartapp.Device.deviceTypeId">deviceTypeId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.deviceTypeName" href="#smartapp.api.models.smartapp.Device.deviceTypeName">deviceTypeName</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.dth" href="#smartapp.api.models.smartapp.Device.dth">dth</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.ir" href="#smartapp.api.models.smartapp.Device.ir">ir</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.irOcf" href="#smartapp.api.models.smartapp.Device.irOcf">irOcf</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.label" href="#smartapp.api.models.smartapp.Device.label">label</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.lan" href="#smartapp.api.models.smartapp.Device.lan">lan</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.locationId" href="#smartapp.api.models.smartapp.Device.locationId">locationId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.manufacturerName" href="#smartapp.api.models.smartapp.Device.manufacturerName">manufacturerName</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.matter" href="#smartapp.api.models.smartapp.Device.matter">matter</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.name" href="#smartapp.api.models.smartapp.Device.name">name</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.ocf" href="#smartapp.api.models.smartapp.Device.ocf">ocf</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.ownerId" href="#smartapp.api.models.smartapp.Device.ownerId">ownerId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.parentDeviceId" href="#smartapp.api.models.smartapp.Device.parentDeviceId">parentDeviceId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.presentationId" href="#smartapp.api.models.smartapp.Device.presentationId">presentationId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.profile" href="#smartapp.api.models.smartapp.Device.profile">profile</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.restrictionTier" href="#smartapp.api.models.smartapp.Device.restrictionTier">restrictionTier</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.roomId" href="#smartapp.api.models.smartapp.Device.roomId">roomId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.type" href="#smartapp.api.models.smartapp.Device.type">type</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.viper" href="#smartapp.api.models.smartapp.Device.viper">viper</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.zigbee" href="#smartapp.api.models.smartapp.Device.zigbee">zigbee</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Device.zwave" href="#smartapp.api.models.smartapp.Device.zwave">zwave</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.DeviceEvent" href="#smartapp.api.models.smartapp.DeviceEvent">DeviceEvent</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.DeviceEvent.deviceId" href="#smartapp.api.models.smartapp.DeviceEvent.deviceId">deviceId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.DeviceEvent.event" href="#smartapp.api.models.smartapp.DeviceEvent.event">event</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.DeviceInstallRequest" href="#smartapp.api.models.smartapp.DeviceInstallRequest">DeviceInstallRequest</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.DeviceInstallRequest.app" href="#smartapp.api.models.smartapp.DeviceInstallRequest.app">app</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.DeviceInstallRequest.label" href="#smartapp.api.models.smartapp.DeviceInstallRequest.label">label</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.DeviceInstallRequest.locationId" href="#smartapp.api.models.smartapp.DeviceInstallRequest.locationId">locationId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.DeviceInstallRequest.roomId" href="#smartapp.api.models.smartapp.DeviceInstallRequest.roomId">roomId</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.DeviceStateEvent" href="#smartapp.api.models.smartapp.DeviceStateEvent">DeviceStateEvent</a></code></h4>
+<ul class="two-column">
+<li><code><a title="smartapp.api.models.smartapp.DeviceStateEvent.attribute" href="#smartapp.api.models.smartapp.DeviceStateEvent.attribute">attribute</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.DeviceStateEvent.capability" href="#smartapp.api.models.smartapp.DeviceStateEvent.capability">capability</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.DeviceStateEvent.component" href="#smartapp.api.models.smartapp.DeviceStateEvent.component">component</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.DeviceStateEvent.data" href="#smartapp.api.models.smartapp.DeviceStateEvent.data">data</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.DeviceStateEvent.unit" href="#smartapp.api.models.smartapp.DeviceStateEvent.unit">unit</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.DeviceStateEvent.value" href="#smartapp.api.models.smartapp.DeviceStateEvent.value">value</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.Event" href="#smartapp.api.models.smartapp.Event">Event</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.Event.eventData" href="#smartapp.api.models.smartapp.Event.eventData">eventData</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Event.settings" href="#smartapp.api.models.smartapp.Event.settings">settings</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.EventData" href="#smartapp.api.models.smartapp.EventData">EventData</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.EventData.authToken" href="#smartapp.api.models.smartapp.EventData.authToken">authToken</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.EventData.events" href="#smartapp.api.models.smartapp.EventData.events">events</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.EventData.installedApp" href="#smartapp.api.models.smartapp.EventData.installedApp">installedApp</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.EventType" href="#smartapp.api.models.smartapp.EventType">EventType</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.EventType.DEVICE_COMMANDS_EVENT" href="#smartapp.api.models.smartapp.EventType.DEVICE_COMMANDS_EVENT">DEVICE_COMMANDS_EVENT</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.EventType.DEVICE_EVENT" href="#smartapp.api.models.smartapp.EventType.DEVICE_EVENT">DEVICE_EVENT</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.EventType.DEVICE_HEALTH_EVENT" href="#smartapp.api.models.smartapp.EventType.DEVICE_HEALTH_EVENT">DEVICE_HEALTH_EVENT</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.EventType.DEVICE_LIFECYCLE_EVENT" href="#smartapp.api.models.smartapp.EventType.DEVICE_LIFECYCLE_EVENT">DEVICE_LIFECYCLE_EVENT</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.EventType.HUB_HEALTH_EVENT" href="#smartapp.api.models.smartapp.EventType.HUB_HEALTH_EVENT">HUB_HEALTH_EVENT</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.EventType.INSTALLED_APP_LIFECYCLE_EVENT" href="#smartapp.api.models.smartapp.EventType.INSTALLED_APP_LIFECYCLE_EVENT">INSTALLED_APP_LIFECYCLE_EVENT</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.EventType.MODE_EVENT" href="#smartapp.api.models.smartapp.EventType.MODE_EVENT">MODE_EVENT</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.EventType.SCENE_LIFECYCLE_EVENT" href="#smartapp.api.models.smartapp.EventType.SCENE_LIFECYCLE_EVENT">SCENE_LIFECYCLE_EVENT</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.EventType.SECURITY_ARM_STATE_EVENT" href="#smartapp.api.models.smartapp.EventType.SECURITY_ARM_STATE_EVENT">SECURITY_ARM_STATE_EVENT</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.EventType.TIMER_EVENT" href="#smartapp.api.models.smartapp.EventType.TIMER_EVENT">TIMER_EVENT</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.EventType.WEATHER_EVENT" href="#smartapp.api.models.smartapp.EventType.WEATHER_EVENT">WEATHER_EVENT</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.InitializeData" href="#smartapp.api.models.smartapp.InitializeData">InitializeData</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.InitializeData.description" href="#smartapp.api.models.smartapp.InitializeData.description">description</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.InitializeData.firstPageId" href="#smartapp.api.models.smartapp.InitializeData.firstPageId">firstPageId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.InitializeData.id" href="#smartapp.api.models.smartapp.InitializeData.id">id</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.InitializeData.name" href="#smartapp.api.models.smartapp.InitializeData.name">name</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.InitializeData.permissions" href="#smartapp.api.models.smartapp.InitializeData.permissions">permissions</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.Install" href="#smartapp.api.models.smartapp.Install">Install</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.Install.installData" href="#smartapp.api.models.smartapp.Install.installData">installData</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.InstallData" href="#smartapp.api.models.smartapp.InstallData">InstallData</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.InstallData.authToken" href="#smartapp.api.models.smartapp.InstallData.authToken">authToken</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.InstallData.installedApp" href="#smartapp.api.models.smartapp.InstallData.installedApp">installedApp</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.InstallData.refreshToken" href="#smartapp.api.models.smartapp.InstallData.refreshToken">refreshToken</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.InstalledApp" href="#smartapp.api.models.smartapp.InstalledApp">InstalledApp</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.InstalledApp.config" href="#smartapp.api.models.smartapp.InstalledApp.config">config</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.InstalledApp.installedAppId" href="#smartapp.api.models.smartapp.InstalledApp.installedAppId">installedAppId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.InstalledApp.locationId" href="#smartapp.api.models.smartapp.InstalledApp.locationId">locationId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.InstalledApp.permissions" href="#smartapp.api.models.smartapp.InstalledApp.permissions">permissions</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.InstalledApp.settings" href="#smartapp.api.models.smartapp.InstalledApp.settings">settings</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.LifecycleBase" href="#smartapp.api.models.smartapp.LifecycleBase">LifecycleBase</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.LifecycleBase.executionId" href="#smartapp.api.models.smartapp.LifecycleBase.executionId">executionId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleBase.lifecycle" href="#smartapp.api.models.smartapp.LifecycleBase.lifecycle">lifecycle</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleBase.locale" href="#smartapp.api.models.smartapp.LifecycleBase.locale">locale</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleBase.settings" href="#smartapp.api.models.smartapp.LifecycleBase.settings">settings</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleBase.version" href="#smartapp.api.models.smartapp.LifecycleBase.version">version</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.LifecycleEvent" href="#smartapp.api.models.smartapp.LifecycleEvent">LifecycleEvent</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.LifecycleEvent.deviceEvent" href="#smartapp.api.models.smartapp.LifecycleEvent.deviceEvent">deviceEvent</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleEvent.deviceLifecycle" href="#smartapp.api.models.smartapp.LifecycleEvent.deviceLifecycle">deviceLifecycle</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleEvent.eventType" href="#smartapp.api.models.smartapp.LifecycleEvent.eventType">eventType</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.LifecycleResponse" href="#smartapp.api.models.smartapp.LifecycleResponse">LifecycleResponse</a></code></h4>
+<ul class="two-column">
+<li><code><a title="smartapp.api.models.smartapp.LifecycleResponse.configurationData" href="#smartapp.api.models.smartapp.LifecycleResponse.configurationData">configurationData</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleResponse.confirmationData" href="#smartapp.api.models.smartapp.LifecycleResponse.confirmationData">confirmationData</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleResponse.eventData" href="#smartapp.api.models.smartapp.LifecycleResponse.eventData">eventData</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleResponse.installData" href="#smartapp.api.models.smartapp.LifecycleResponse.installData">installData</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleResponse.oAuthCallbackData" href="#smartapp.api.models.smartapp.LifecycleResponse.oAuthCallbackData">oAuthCallbackData</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleResponse.pingData" href="#smartapp.api.models.smartapp.LifecycleResponse.pingData">pingData</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleResponse.targetUrl" href="#smartapp.api.models.smartapp.LifecycleResponse.targetUrl">targetUrl</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleResponse.uninstallData" href="#smartapp.api.models.smartapp.LifecycleResponse.uninstallData">uninstallData</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleResponse.updateData" href="#smartapp.api.models.smartapp.LifecycleResponse.updateData">updateData</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.LifecycleType" href="#smartapp.api.models.smartapp.LifecycleType">LifecycleType</a></code></h4>
+<ul class="two-column">
+<li><code><a title="smartapp.api.models.smartapp.LifecycleType.configuration" href="#smartapp.api.models.smartapp.LifecycleType.configuration">configuration</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleType.event" href="#smartapp.api.models.smartapp.LifecycleType.event">event</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleType.install" href="#smartapp.api.models.smartapp.LifecycleType.install">install</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleType.oauth_callback" href="#smartapp.api.models.smartapp.LifecycleType.oauth_callback">oauth_callback</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleType.uninstall" href="#smartapp.api.models.smartapp.LifecycleType.uninstall">uninstall</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.LifecycleType.update" href="#smartapp.api.models.smartapp.LifecycleType.update">update</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.OAuthCallbackData" href="#smartapp.api.models.smartapp.OAuthCallbackData">OAuthCallbackData</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.OAuthCallbackData.installedAppId" href="#smartapp.api.models.smartapp.OAuthCallbackData.installedAppId">installedAppId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.OAuthCallbackData.urlPath" href="#smartapp.api.models.smartapp.OAuthCallbackData.urlPath">urlPath</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.Option" href="#smartapp.api.models.smartapp.Option">Option</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.Option.id" href="#smartapp.api.models.smartapp.Option.id">id</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Option.name" href="#smartapp.api.models.smartapp.Option.name">name</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.PageData" href="#smartapp.api.models.smartapp.PageData">PageData</a></code></h4>
+<ul class="two-column">
+<li><code><a title="smartapp.api.models.smartapp.PageData.complete" href="#smartapp.api.models.smartapp.PageData.complete">complete</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageData.name" href="#smartapp.api.models.smartapp.PageData.name">name</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageData.nextPageId" href="#smartapp.api.models.smartapp.PageData.nextPageId">nextPageId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageData.pageId" href="#smartapp.api.models.smartapp.PageData.pageId">pageId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageData.previousPageId" href="#smartapp.api.models.smartapp.PageData.previousPageId">previousPageId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageData.sections" href="#smartapp.api.models.smartapp.PageData.sections">sections</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.PageSection" href="#smartapp.api.models.smartapp.PageSection">PageSection</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.PageSection.name" href="#smartapp.api.models.smartapp.PageSection.name">name</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageSection.settings" href="#smartapp.api.models.smartapp.PageSection.settings">settings</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.PageSetting" href="#smartapp.api.models.smartapp.PageSetting">PageSetting</a></code></h4>
+<ul class="two-column">
+<li><code><a title="smartapp.api.models.smartapp.PageSetting.capabilities" href="#smartapp.api.models.smartapp.PageSetting.capabilities">capabilities</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageSetting.description" href="#smartapp.api.models.smartapp.PageSetting.description">description</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageSetting.id" href="#smartapp.api.models.smartapp.PageSetting.id">id</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageSetting.multiple" href="#smartapp.api.models.smartapp.PageSetting.multiple">multiple</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageSetting.name" href="#smartapp.api.models.smartapp.PageSetting.name">name</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageSetting.options" href="#smartapp.api.models.smartapp.PageSetting.options">options</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageSetting.permissions" href="#smartapp.api.models.smartapp.PageSetting.permissions">permissions</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageSetting.required" href="#smartapp.api.models.smartapp.PageSetting.required">required</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.PageSetting.type" href="#smartapp.api.models.smartapp.PageSetting.type">type</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.Phase" href="#smartapp.api.models.smartapp.Phase">Phase</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.Phase.initialize" href="#smartapp.api.models.smartapp.Phase.initialize">initialize</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Phase.page" href="#smartapp.api.models.smartapp.Phase.page">page</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.PingData" href="#smartapp.api.models.smartapp.PingData">PingData</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.PingData.challenge" href="#smartapp.api.models.smartapp.PingData.challenge">challenge</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.SettingType" href="#smartapp.api.models.smartapp.SettingType">SettingType</a></code></h4>
+<ul class="two-column">
+<li><code><a title="smartapp.api.models.smartapp.SettingType.DEVICE" href="#smartapp.api.models.smartapp.SettingType.DEVICE">DEVICE</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SettingType.ENUM" href="#smartapp.api.models.smartapp.SettingType.ENUM">ENUM</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SettingType.MESSAGE" href="#smartapp.api.models.smartapp.SettingType.MESSAGE">MESSAGE</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SettingType.MODE" href="#smartapp.api.models.smartapp.SettingType.MODE">MODE</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SettingType.PERMISSION" href="#smartapp.api.models.smartapp.SettingType.PERMISSION">PERMISSION</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SettingType.SCENE" href="#smartapp.api.models.smartapp.SettingType.SCENE">SCENE</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SettingType.STRING" href="#smartapp.api.models.smartapp.SettingType.STRING">STRING</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.Settings" href="#smartapp.api.models.smartapp.Settings">Settings</a></code></h4>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.SmartAppEventRequest" href="#smartapp.api.models.smartapp.SmartAppEventRequest">SmartAppEventRequest</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.SmartAppEventRequest.attributes" href="#smartapp.api.models.smartapp.SmartAppEventRequest.attributes">attributes</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SmartAppEventRequest.name" href="#smartapp.api.models.smartapp.SmartAppEventRequest.name">name</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.Subscription" href="#smartapp.api.models.smartapp.Subscription">Subscription</a></code></h4>
+<ul class="two-column">
+<li><code><a title="smartapp.api.models.smartapp.Subscription.capability" href="#smartapp.api.models.smartapp.Subscription.capability">capability</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Subscription.device" href="#smartapp.api.models.smartapp.Subscription.device">device</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Subscription.deviceHealth" href="#smartapp.api.models.smartapp.Subscription.deviceHealth">deviceHealth</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Subscription.deviceLifecycle" href="#smartapp.api.models.smartapp.Subscription.deviceLifecycle">deviceLifecycle</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Subscription.hubHealth" href="#smartapp.api.models.smartapp.Subscription.hubHealth">hubHealth</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Subscription.id" href="#smartapp.api.models.smartapp.Subscription.id">id</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Subscription.installedAppId" href="#smartapp.api.models.smartapp.Subscription.installedAppId">installedAppId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Subscription.mode" href="#smartapp.api.models.smartapp.Subscription.mode">mode</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Subscription.sceneLifecycle" href="#smartapp.api.models.smartapp.Subscription.sceneLifecycle">sceneLifecycle</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Subscription.securityArmState" href="#smartapp.api.models.smartapp.Subscription.securityArmState">securityArmState</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Subscription.sourceType" href="#smartapp.api.models.smartapp.Subscription.sourceType">sourceType</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.SubscriptionRequest" href="#smartapp.api.models.smartapp.SubscriptionRequest">SubscriptionRequest</a></code></h4>
+<ul class="two-column">
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.capability" href="#smartapp.api.models.smartapp.SubscriptionRequest.capability">capability</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.device" href="#smartapp.api.models.smartapp.SubscriptionRequest.device">device</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.deviceHealth" href="#smartapp.api.models.smartapp.SubscriptionRequest.deviceHealth">deviceHealth</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.deviceLifecycle" href="#smartapp.api.models.smartapp.SubscriptionRequest.deviceLifecycle">deviceLifecycle</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.hubHealth" href="#smartapp.api.models.smartapp.SubscriptionRequest.hubHealth">hubHealth</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.id" href="#smartapp.api.models.smartapp.SubscriptionRequest.id">id</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.installedAppId" href="#smartapp.api.models.smartapp.SubscriptionRequest.installedAppId">installedAppId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.mode" href="#smartapp.api.models.smartapp.SubscriptionRequest.mode">mode</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.sceneLifecycle" href="#smartapp.api.models.smartapp.SubscriptionRequest.sceneLifecycle">sceneLifecycle</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.securityArmState" href="#smartapp.api.models.smartapp.SubscriptionRequest.securityArmState">securityArmState</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.sourceType" href="#smartapp.api.models.smartapp.SubscriptionRequest.sourceType">sourceType</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.SubscriptionType" href="#smartapp.api.models.smartapp.SubscriptionType">SubscriptionType</a></code></h4>
+<ul class="two-column">
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionType.CAPABILITY" href="#smartapp.api.models.smartapp.SubscriptionType.CAPABILITY">CAPABILITY</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionType.DEVICE" href="#smartapp.api.models.smartapp.SubscriptionType.DEVICE">DEVICE</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionType.DEVICE_HEALTH" href="#smartapp.api.models.smartapp.SubscriptionType.DEVICE_HEALTH">DEVICE_HEALTH</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionType.DEVICE_LIFECYCLE" href="#smartapp.api.models.smartapp.SubscriptionType.DEVICE_LIFECYCLE">DEVICE_LIFECYCLE</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionType.HUB_HEALTH" href="#smartapp.api.models.smartapp.SubscriptionType.HUB_HEALTH">HUB_HEALTH</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionType.MODE" href="#smartapp.api.models.smartapp.SubscriptionType.MODE">MODE</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionType.SCENE_LIFECYCLE" href="#smartapp.api.models.smartapp.SubscriptionType.SCENE_LIFECYCLE">SCENE_LIFECYCLE</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.SubscriptionType.SECURITY_ARM_STATE" href="#smartapp.api.models.smartapp.SubscriptionType.SECURITY_ARM_STATE">SECURITY_ARM_STATE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.UninstallData" href="#smartapp.api.models.smartapp.UninstallData">UninstallData</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.UninstallData.installedApp" href="#smartapp.api.models.smartapp.UninstallData.installedApp">installedApp</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UninstallData.settings" href="#smartapp.api.models.smartapp.UninstallData.settings">settings</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.Update" href="#smartapp.api.models.smartapp.Update">Update</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.Update.settings" href="#smartapp.api.models.smartapp.Update.settings">settings</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.Update.updateData" href="#smartapp.api.models.smartapp.Update.updateData">updateData</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.UpdateData" href="#smartapp.api.models.smartapp.UpdateData">UpdateData</a></code></h4>
+<ul class="two-column">
+<li><code><a title="smartapp.api.models.smartapp.UpdateData.authToken" href="#smartapp.api.models.smartapp.UpdateData.authToken">authToken</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UpdateData.installedApp" href="#smartapp.api.models.smartapp.UpdateData.installedApp">installedApp</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UpdateData.permissions" href="#smartapp.api.models.smartapp.UpdateData.permissions">permissions</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UpdateData.previousConfig" href="#smartapp.api.models.smartapp.UpdateData.previousConfig">previousConfig</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UpdateData.previousPermissions" href="#smartapp.api.models.smartapp.UpdateData.previousPermissions">previousPermissions</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UpdateData.refreshToken" href="#smartapp.api.models.smartapp.UpdateData.refreshToken">refreshToken</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.UpdateDeviceRequest" href="#smartapp.api.models.smartapp.UpdateDeviceRequest">UpdateDeviceRequest</a></code></h4>
+<ul class="">
+<li><code><a title="smartapp.api.models.smartapp.UpdateDeviceRequest.components" href="#smartapp.api.models.smartapp.UpdateDeviceRequest.components">components</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UpdateDeviceRequest.label" href="#smartapp.api.models.smartapp.UpdateDeviceRequest.label">label</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UpdateDeviceRequest.locationId" href="#smartapp.api.models.smartapp.UpdateDeviceRequest.locationId">locationId</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UpdateDeviceRequest.roomId" href="#smartapp.api.models.smartapp.UpdateDeviceRequest.roomId">roomId</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="smartapp.api.models.smartapp.UpdateEvent" href="#smartapp.api.models.smartapp.UpdateEvent">UpdateEvent</a></code></h4>
+<ul class="two-column">
+<li><code><a title="smartapp.api.models.smartapp.UpdateEvent.attribute" href="#smartapp.api.models.smartapp.UpdateEvent.attribute">attribute</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UpdateEvent.capability" href="#smartapp.api.models.smartapp.UpdateEvent.capability">capability</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UpdateEvent.component" href="#smartapp.api.models.smartapp.UpdateEvent.component">component</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UpdateEvent.data" href="#smartapp.api.models.smartapp.UpdateEvent.data">data</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UpdateEvent.unit" href="#smartapp.api.models.smartapp.UpdateEvent.unit">unit</a></code></li>
+<li><code><a title="smartapp.api.models.smartapp.UpdateEvent.value" href="#smartapp.api.models.smartapp.UpdateEvent.value">value</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>smartapp.api.smartapp.smartapp API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>smartapp.api.smartapp.smartapp</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from __future__ import annotations
+import random
+from typing import List, Dict, Any
+
+from smartapp.api import smartthings, models, types
+from smartapp.api.smartapp import configuration, task
+
+from smartapp import logger
+log = logger.get()
+
+
+class SmartApp(object):
+    &#34;&#34;&#34;class: SmartApp
+
+    This class is used to define the functionality of a SmartApp.
+    The instance definition of the App will be created by the
+    Configuration Lifecycle, and create an instance per InstalledApp.
+    &#34;&#34;&#34;
+
+    def __init__(self, name, description):
+        &#34;&#34;&#34;SmartApp: constructor
+
+        Args:
+            name (str): SmartApp appName
+            descrtiption (str): SmartApp description
+        &#34;&#34;&#34;
+        self.name        = name
+        self.description = description
+        self.permissions = []
+        self.ctx         = None
+        self.routes      = []
+        self.pages       = []
+
+    @property
+    def app_id(self):
+        &#34;&#34;&#34;`smartapp.api.smartapp.context.AppContext.app_id` (InstappedAppId)&#34;&#34;&#34;
+        return self.ctx.app_id
+
+    @property
+    def location_id(self):
+        &#34;&#34;&#34;`smartapp.api.smartapp.context.AppContext.location_id` (LocationID)&#34;&#34;&#34;
+        return self.ctx.location_id
+
+    @property
+    def session(self):
+        &#34;&#34;&#34;`smartapp.api.smartapp.context.AppContext.session` (`aiohttp.ClientSession`)
+
+        Session to be used with SmartThings API&#39;s, provides App OAuth credentials
+        &#34;&#34;&#34;
+        return self.ctx.session
+
+    @property
+    def token(self):
+        return self.ctx.token
+
+    @property
+    def refresh_token(self):
+        return self.ctx.refresh_token
+
+    @property
+    def authentication(self):
+        return self.ctx.authentication
+
+    def grant(self, scope: str = None,
+                    scopes: List[str] = None) -&gt; type[SmartApp]:
+        &#34;&#34;&#34;Add one or multiple OAuth scopes to the SmartApp requirements
+        required for installation
+
+        Args:
+            scope (str): scope name
+            scopes (list): scope names
+
+        Returns:
+            `SmartApp` (self)
+        &#34;&#34;&#34;
+        if scopes:
+            self.permissions += scopes
+        else:
+            self.permissions.append(scope)
+        return self
+
+    def page(self, name, last_page=True) -&gt; configuration.Page:
+        &#34;&#34;&#34;Add a new page to the Configuration Lifecycle
+
+        Args:
+            name (str): Page Name
+            complete (bool): True if this is the last page
+
+        Returns:
+            `smartapp.api.smartapp.configuration.Page`: a new page
+
+        &#34;&#34;&#34;
+        pageId = len(self.pages)+1
+        kwargs = {&#39;pageId&#39;: str(pageId), &#39;name&#39;: name, &#39;complete&#39;: last_page}
+        if not last_page:
+            kwargs.update({&#39;nextPageId&#39;: str(pageId+1)})
+        self.pages.append(configuration.Page(**kwargs))
+        return self.pages[pageId-1]
+
+    def route(self, verb: str, path: str, func: str) -&gt; configuration.Route:
+        &#34;&#34;&#34;Register a new route for the SmartApp, the method name must
+        be an async function which extends the base SmartApp class
+
+        Args:
+            verb (str): HTTP method name
+            path (str): relative route URI
+            func (str): function handler which extends SmartApp
+
+        Returns:
+            `smartapp.api.smartapp.configuration.Route`: the new route
+        &#34;&#34;&#34;
+        route = configuration.Route(verb=verb, path=path, func=func)
+        self.routes.append(route)
+        return route
+
+    async def authorize(self, req: types.AppRequest) -&gt; bool:
+        &#34;&#34;&#34;This is a convenience method to authorize a request to
+        a route handler using the instances provided smartapp.AppAuth()
+        class by attaching &#39;authorize&#39; as an auth handler
+
+        example: `&lt;route&gt;.add_auth_handler(&#39;authorize&#39;)`
+
+        Args:
+            req (`smartapp.api.types.AppRequest`): incoming request to a SmartApp Route
+
+        Returns:
+            bool: result of auth challenge
+
+        &#34;&#34;&#34;
+        self.authentication.authorize(req)
+
+    @task.AppTask.handle_excs
+    async def subscribe(self, type: models.SubscriptionType,
+                              obj: Dict[str, List[str]]) -&gt; models.smartapp.Subscription:
+        &#34;&#34;&#34;Create subscription from the AppContext to specified source
+
+        Args:
+            type (`smartapp.api.models.SubscriptionType`): incoming request to a SmartApp Route
+            obj (dict): model specified by SubscrtionType
+
+        Returns:
+            `smartapp.api.models.smartapp.Subscription`
+        &#34;&#34;&#34;
+
+        if not isinstance(type, models.SubscriptionType):
+            raise TypeError(&#34;subscribe() requires a valid SubscriptionType&#34;)
+
+        obj.update({&#39;subscriptionName&#39;: &#39;s_{}&#39;.format(
+            round(random.random() * 1000000)
+        ), &#39;stateChangeOnly&#39;: True, &#39;modes&#39;: []})
+        if type == models.SubscriptionType.DEVICE:
+            obj = {&#39;device&#39;: obj}
+        if type == models.SubscriptionType.MODE:
+            obj = {&#39;mode&#39;: obj}
+        if type == models.SubscriptionType.DEVICE_LIFECYCLE:
+            obj = {&#39;deviceLifecycle&#39;: obj}
+        if type == models.SubscriptionType.CAPABILITY:
+            obj = {&#39;capability&#39;: obj}
+        obj.update({&#39;sourceType&#39;: str.value})
+
+        return await smartthings.InstalledApp(
+            session=self.session, app_id=self.app_id
+        ).subscribe(obj)
+
+    @task.AppTask.handle_excs
+    async def unsubscribe(self, id: str=str()) -&gt; Dict[Any, Any]:
+        &#34;&#34;&#34;Delete subscription with ID or all subscriptions if not specified
+
+        Args:
+            id (str): SubscriptionID
+
+        Returns:
+            dict
+        &#34;&#34;&#34;
+
+        installedapp=smartthings.InstalledApp(
+            session=self.session, app_id=self.app_id
+        )
+        if id:
+            return installedapp.ubsubscribe(id)
+        for id in installedapp.subscriptions():
+            task.AppTask(installedapp.unsubscribe, id)
+
+    @task.AppTask.handle_excs
+    async def subscriptions(self) -&gt; models.SubscriptionCollection:
+        &#34;&#34;&#34;List this AppContext Subscriptions
+
+        Returns:
+            `smartapp.api.models.SubscriptionCollection`
+        &#34;&#34;&#34;
+
+        async for item in smartthings.InstalledApp(
+                    session=self.session, app_id=self.app_id
+                ).subscriptions():
+            yield item
+
+    @task.AppTask.handle_excs
+    async def app_event(self, evt: models.smartapp.SmartAppEventRequest) -&gt; Dict[Any, Any]:
+        &#34;&#34;&#34;Create subscription from the AppContext to specified source
+
+        Args:
+            evt (`smartapp.api.models.smartapp.SmartAppEventRequest`): SmartApp Event
+
+        Returns:
+            dict: Empty if success
+        &#34;&#34;&#34;
+        return await smartthings.InstalledApp(
+            session=self.session, app_id=self.app_id
+        ).event(evt)
+
+    @task.AppTask.handle_excs
+    async def renew_token(self):
+        log.info(&#34;requesting token refresh for app_id %s&#34;, self.app_id)
+        try:
+            resp = await smartthings.OAuth().refresh_token(self.refresh_token)
+            if not resp.access_token:
+                raise AssertionError(
+                    resp.json(
+                        include={&#39;error&#39;: True, &#39;error_description&#39;: True },
+                        indent=2
+                    )
+                )
+        except types.AuthInvalid:
+            return log.error(&#34;token endpoint reject the oauth client credentials&#34;)
+        except AssertionError as e:
+            return log.error(e)
+
+        self.ctx.update_token(resp)
+
+    def initialize(self) -&gt; models.smartapp.ConfigurationData:
+        for page in self.pages:
+            for section in page.sections:
+                for settings in section.settings:
+                    settings.permissions = self.permissions
+        return models.smartapp.ConfigurationData(
+            initialize=models.smartapp.InitializeData(
+                id=self.name,
+                name=self.name,
+                description=self.description,
+                firstPageId=str(0),
+                permissions=self.permissions
+            )
+        )
+
+    def pageId(self, pageId: str) -&gt; models.smartapp.ConfigurationData:
+        return models.smartapp.ConfigurationData(
+            page=self.pages[int(pageId)-1]
+        )
+
+    def load_routes(self):
+        for route in self.routes:
+            route.app = self
+            route.register()
+
+        configuration.router.reload()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="smartapp.api.smartapp.smartapp.SmartApp"><code class="flex name class">
+<span>class <span class="ident">SmartApp</span></span>
+<span>(</span><span>name, description)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>class: SmartApp</p>
+<p>This class is used to define the functionality of a SmartApp.
+The instance definition of the App will be created by the
+Configuration Lifecycle, and create an instance per InstalledApp.</p>
+<p>SmartApp: constructor</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>SmartApp appName</dd>
+<dt><strong><code>descrtiption</code></strong> :&ensp;<code>str</code></dt>
+<dd>SmartApp description</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SmartApp(object):
+    &#34;&#34;&#34;class: SmartApp
+
+    This class is used to define the functionality of a SmartApp.
+    The instance definition of the App will be created by the
+    Configuration Lifecycle, and create an instance per InstalledApp.
+    &#34;&#34;&#34;
+
+    def __init__(self, name, description):
+        &#34;&#34;&#34;SmartApp: constructor
+
+        Args:
+            name (str): SmartApp appName
+            descrtiption (str): SmartApp description
+        &#34;&#34;&#34;
+        self.name        = name
+        self.description = description
+        self.permissions = []
+        self.ctx         = None
+        self.routes      = []
+        self.pages       = []
+
+    @property
+    def app_id(self):
+        &#34;&#34;&#34;`smartapp.api.smartapp.context.AppContext.app_id` (InstappedAppId)&#34;&#34;&#34;
+        return self.ctx.app_id
+
+    @property
+    def location_id(self):
+        &#34;&#34;&#34;`smartapp.api.smartapp.context.AppContext.location_id` (LocationID)&#34;&#34;&#34;
+        return self.ctx.location_id
+
+    @property
+    def session(self):
+        &#34;&#34;&#34;`smartapp.api.smartapp.context.AppContext.session` (`aiohttp.ClientSession`)
+
+        Session to be used with SmartThings API&#39;s, provides App OAuth credentials
+        &#34;&#34;&#34;
+        return self.ctx.session
+
+    @property
+    def token(self):
+        return self.ctx.token
+
+    @property
+    def refresh_token(self):
+        return self.ctx.refresh_token
+
+    @property
+    def authentication(self):
+        return self.ctx.authentication
+
+    def grant(self, scope: str = None,
+                    scopes: List[str] = None) -&gt; type[SmartApp]:
+        &#34;&#34;&#34;Add one or multiple OAuth scopes to the SmartApp requirements
+        required for installation
+
+        Args:
+            scope (str): scope name
+            scopes (list): scope names
+
+        Returns:
+            `SmartApp` (self)
+        &#34;&#34;&#34;
+        if scopes:
+            self.permissions += scopes
+        else:
+            self.permissions.append(scope)
+        return self
+
+    def page(self, name, last_page=True) -&gt; configuration.Page:
+        &#34;&#34;&#34;Add a new page to the Configuration Lifecycle
+
+        Args:
+            name (str): Page Name
+            complete (bool): True if this is the last page
+
+        Returns:
+            `smartapp.api.smartapp.configuration.Page`: a new page
+
+        &#34;&#34;&#34;
+        pageId = len(self.pages)+1
+        kwargs = {&#39;pageId&#39;: str(pageId), &#39;name&#39;: name, &#39;complete&#39;: last_page}
+        if not last_page:
+            kwargs.update({&#39;nextPageId&#39;: str(pageId+1)})
+        self.pages.append(configuration.Page(**kwargs))
+        return self.pages[pageId-1]
+
+    def route(self, verb: str, path: str, func: str) -&gt; configuration.Route:
+        &#34;&#34;&#34;Register a new route for the SmartApp, the method name must
+        be an async function which extends the base SmartApp class
+
+        Args:
+            verb (str): HTTP method name
+            path (str): relative route URI
+            func (str): function handler which extends SmartApp
+
+        Returns:
+            `smartapp.api.smartapp.configuration.Route`: the new route
+        &#34;&#34;&#34;
+        route = configuration.Route(verb=verb, path=path, func=func)
+        self.routes.append(route)
+        return route
+
+    async def authorize(self, req: types.AppRequest) -&gt; bool:
+        &#34;&#34;&#34;This is a convenience method to authorize a request to
+        a route handler using the instances provided smartapp.AppAuth()
+        class by attaching &#39;authorize&#39; as an auth handler
+
+        example: `&lt;route&gt;.add_auth_handler(&#39;authorize&#39;)`
+
+        Args:
+            req (`smartapp.api.types.AppRequest`): incoming request to a SmartApp Route
+
+        Returns:
+            bool: result of auth challenge
+
+        &#34;&#34;&#34;
+        self.authentication.authorize(req)
+
+    @task.AppTask.handle_excs
+    async def subscribe(self, type: models.SubscriptionType,
+                              obj: Dict[str, List[str]]) -&gt; models.smartapp.Subscription:
+        &#34;&#34;&#34;Create subscription from the AppContext to specified source
+
+        Args:
+            type (`smartapp.api.models.SubscriptionType`): incoming request to a SmartApp Route
+            obj (dict): model specified by SubscrtionType
+
+        Returns:
+            `smartapp.api.models.smartapp.Subscription`
+        &#34;&#34;&#34;
+
+        if not isinstance(type, models.SubscriptionType):
+            raise TypeError(&#34;subscribe() requires a valid SubscriptionType&#34;)
+
+        obj.update({&#39;subscriptionName&#39;: &#39;s_{}&#39;.format(
+            round(random.random() * 1000000)
+        ), &#39;stateChangeOnly&#39;: True, &#39;modes&#39;: []})
+        if type == models.SubscriptionType.DEVICE:
+            obj = {&#39;device&#39;: obj}
+        if type == models.SubscriptionType.MODE:
+            obj = {&#39;mode&#39;: obj}
+        if type == models.SubscriptionType.DEVICE_LIFECYCLE:
+            obj = {&#39;deviceLifecycle&#39;: obj}
+        if type == models.SubscriptionType.CAPABILITY:
+            obj = {&#39;capability&#39;: obj}
+        obj.update({&#39;sourceType&#39;: str.value})
+
+        return await smartthings.InstalledApp(
+            session=self.session, app_id=self.app_id
+        ).subscribe(obj)
+
+    @task.AppTask.handle_excs
+    async def unsubscribe(self, id: str=str()) -&gt; Dict[Any, Any]:
+        &#34;&#34;&#34;Delete subscription with ID or all subscriptions if not specified
+
+        Args:
+            id (str): SubscriptionID
+
+        Returns:
+            dict
+        &#34;&#34;&#34;
+
+        installedapp=smartthings.InstalledApp(
+            session=self.session, app_id=self.app_id
+        )
+        if id:
+            return installedapp.ubsubscribe(id)
+        for id in installedapp.subscriptions():
+            task.AppTask(installedapp.unsubscribe, id)
+
+    @task.AppTask.handle_excs
+    async def subscriptions(self) -&gt; models.SubscriptionCollection:
+        &#34;&#34;&#34;List this AppContext Subscriptions
+
+        Returns:
+            `smartapp.api.models.SubscriptionCollection`
+        &#34;&#34;&#34;
+
+        async for item in smartthings.InstalledApp(
+                    session=self.session, app_id=self.app_id
+                ).subscriptions():
+            yield item
+
+    @task.AppTask.handle_excs
+    async def app_event(self, evt: models.smartapp.SmartAppEventRequest) -&gt; Dict[Any, Any]:
+        &#34;&#34;&#34;Create subscription from the AppContext to specified source
+
+        Args:
+            evt (`smartapp.api.models.smartapp.SmartAppEventRequest`): SmartApp Event
+
+        Returns:
+            dict: Empty if success
+        &#34;&#34;&#34;
+        return await smartthings.InstalledApp(
+            session=self.session, app_id=self.app_id
+        ).event(evt)
+
+    @task.AppTask.handle_excs
+    async def renew_token(self):
+        log.info(&#34;requesting token refresh for app_id %s&#34;, self.app_id)
+        try:
+            resp = await smartthings.OAuth().refresh_token(self.refresh_token)
+            if not resp.access_token:
+                raise AssertionError(
+                    resp.json(
+                        include={&#39;error&#39;: True, &#39;error_description&#39;: True },
+                        indent=2
+                    )
+                )
+        except types.AuthInvalid:
+            return log.error(&#34;token endpoint reject the oauth client credentials&#34;)
+        except AssertionError as e:
+            return log.error(e)
+
+        self.ctx.update_token(resp)
+
+    def initialize(self) -&gt; models.smartapp.ConfigurationData:
+        for page in self.pages:
+            for section in page.sections:
+                for settings in section.settings:
+                    settings.permissions = self.permissions
+        return models.smartapp.ConfigurationData(
+            initialize=models.smartapp.InitializeData(
+                id=self.name,
+                name=self.name,
+                description=self.description,
+                firstPageId=str(0),
+                permissions=self.permissions
+            )
+        )
+
+    def pageId(self, pageId: str) -&gt; models.smartapp.ConfigurationData:
+        return models.smartapp.ConfigurationData(
+            page=self.pages[int(pageId)-1]
+        )
+
+    def load_routes(self):
+        for route in self.routes:
+            route.app = self
+            route.register()
+
+        configuration.router.reload()</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="smartapp.api.smartapp.smartapp.SmartApp.app_id"><code class="name">var <span class="ident">app_id</span></code></dt>
+<dd>
+<div class="desc"><p><code><a title="smartapp.api.smartapp.context.AppContext.app_id" href="context.html#smartapp.api.smartapp.context.AppContext.app_id">AppContext.app_id</a></code> (InstappedAppId)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def app_id(self):
+    &#34;&#34;&#34;`smartapp.api.smartapp.context.AppContext.app_id` (InstappedAppId)&#34;&#34;&#34;
+    return self.ctx.app_id</code></pre>
+</details>
+</dd>
+<dt id="smartapp.api.smartapp.smartapp.SmartApp.location_id"><code class="name">var <span class="ident">location_id</span></code></dt>
+<dd>
+<div class="desc"><p><code><a title="smartapp.api.smartapp.context.AppContext.location_id" href="context.html#smartapp.api.smartapp.context.AppContext.location_id">AppContext.location_id</a></code> (LocationID)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def location_id(self):
+    &#34;&#34;&#34;`smartapp.api.smartapp.context.AppContext.location_id` (LocationID)&#34;&#34;&#34;
+    return self.ctx.location_id</code></pre>
+</details>
+</dd>
+<dt id="smartapp.api.smartapp.smartapp.SmartApp.session"><code class="name">var <span class="ident">session</span></code></dt>
+<dd>
+<div class="desc"><p><code><a title="smartapp.api.smartapp.context.AppContext.session" href="context.html#smartapp.api.smartapp.context.AppContext.session">AppContext.session</a></code> (<code>aiohttp.ClientSession</code>)</p>
+<p>Session to be used with SmartThings API's, provides App OAuth credentials</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def session(self):
+    &#34;&#34;&#34;`smartapp.api.smartapp.context.AppContext.session` (`aiohttp.ClientSession`)
+
+    Session to be used with SmartThings API&#39;s, provides App OAuth credentials
+    &#34;&#34;&#34;
+    return self.ctx.session</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="smartapp.api.smartapp.smartapp.SmartApp.app_event"><code class="name flex">
+<span>async def <span class="ident">app_event</span></span>(<span>self, evt: models.smartapp.SmartAppEventRequest) ‑> Dict[Any, Any]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create subscription from the AppContext to specified source</p>
+<h2 id="args">Args</h2>
+<p>evt (<code><a title="smartapp.api.models.smartapp.SmartAppEventRequest" href="../models/smartapp.html#smartapp.api.models.smartapp.SmartAppEventRequest">SmartAppEventRequest</a></code>): SmartApp Event</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>Empty if success</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@task.AppTask.handle_excs
+async def app_event(self, evt: models.smartapp.SmartAppEventRequest) -&gt; Dict[Any, Any]:
+    &#34;&#34;&#34;Create subscription from the AppContext to specified source
+
+    Args:
+        evt (`smartapp.api.models.smartapp.SmartAppEventRequest`): SmartApp Event
+
+    Returns:
+        dict: Empty if success
+    &#34;&#34;&#34;
+    return await smartthings.InstalledApp(
+        session=self.session, app_id=self.app_id
+    ).event(evt)</code></pre>
+</details>
+</dd>
+<dt id="smartapp.api.smartapp.smartapp.SmartApp.authorize"><code class="name flex">
+<span>async def <span class="ident">authorize</span></span>(<span>self, req: types.AppRequest) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This is a convenience method to authorize a request to
+a route handler using the instances provided smartapp.AppAuth()
+class by attaching 'authorize' as an auth handler</p>
+<p>example: <code>&lt;route&gt;.add_auth_handler('authorize')</code></p>
+<h2 id="args">Args</h2>
+<p>req (<code><a title="smartapp.api.types.AppRequest" href="../types.html#smartapp.api.types.AppRequest">AppRequest</a></code>): incoming request to a SmartApp Route</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>result of auth challenge</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def authorize(self, req: types.AppRequest) -&gt; bool:
+    &#34;&#34;&#34;This is a convenience method to authorize a request to
+    a route handler using the instances provided smartapp.AppAuth()
+    class by attaching &#39;authorize&#39; as an auth handler
+
+    example: `&lt;route&gt;.add_auth_handler(&#39;authorize&#39;)`
+
+    Args:
+        req (`smartapp.api.types.AppRequest`): incoming request to a SmartApp Route
+
+    Returns:
+        bool: result of auth challenge
+
+    &#34;&#34;&#34;
+    self.authentication.authorize(req)</code></pre>
+</details>
+</dd>
+<dt id="smartapp.api.smartapp.smartapp.SmartApp.grant"><code class="name flex">
+<span>def <span class="ident">grant</span></span>(<span>self, scope: str = None, scopes: List[str] = None) ‑> type[<a title="smartapp.api.smartapp.smartapp.SmartApp" href="#smartapp.api.smartapp.smartapp.SmartApp">SmartApp</a>]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add one or multiple OAuth scopes to the SmartApp requirements
+required for installation</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>scope</code></strong> :&ensp;<code>str</code></dt>
+<dd>scope name</dd>
+<dt><strong><code>scopes</code></strong> :&ensp;<code>list</code></dt>
+<dd>scope names</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code><a title="smartapp.api.smartapp.smartapp.SmartApp" href="#smartapp.api.smartapp.smartapp.SmartApp">SmartApp</a></code> (self)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def grant(self, scope: str = None,
+                scopes: List[str] = None) -&gt; type[SmartApp]:
+    &#34;&#34;&#34;Add one or multiple OAuth scopes to the SmartApp requirements
+    required for installation
+
+    Args:
+        scope (str): scope name
+        scopes (list): scope names
+
+    Returns:
+        `SmartApp` (self)
+    &#34;&#34;&#34;
+    if scopes:
+        self.permissions += scopes
+    else:
+        self.permissions.append(scope)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="smartapp.api.smartapp.smartapp.SmartApp.page"><code class="name flex">
+<span>def <span class="ident">page</span></span>(<span>self, name, last_page=True) ‑> <a title="smartapp.api.smartapp.configuration.Page" href="configuration.html#smartapp.api.smartapp.configuration.Page">Page</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add a new page to the Configuration Lifecycle</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Page Name</dd>
+<dt><strong><code>complete</code></strong> :&ensp;<code>bool</code></dt>
+<dd>True if this is the last page</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code><a title="smartapp.api.smartapp.configuration.Page" href="configuration.html#smartapp.api.smartapp.configuration.Page">Page</a></code>: a new page</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def page(self, name, last_page=True) -&gt; configuration.Page:
+    &#34;&#34;&#34;Add a new page to the Configuration Lifecycle
+
+    Args:
+        name (str): Page Name
+        complete (bool): True if this is the last page
+
+    Returns:
+        `smartapp.api.smartapp.configuration.Page`: a new page
+
+    &#34;&#34;&#34;
+    pageId = len(self.pages)+1
+    kwargs = {&#39;pageId&#39;: str(pageId), &#39;name&#39;: name, &#39;complete&#39;: last_page}
+    if not last_page:
+        kwargs.update({&#39;nextPageId&#39;: str(pageId+1)})
+    self.pages.append(configuration.Page(**kwargs))
+    return self.pages[pageId-1]</code></pre>
+</details>
+</dd>
+<dt id="smartapp.api.smartapp.smartapp.SmartApp.route"><code class="name flex">
+<span>def <span class="ident">route</span></span>(<span>self, verb: str, path: str, func: str) ‑> <a title="smartapp.api.smartapp.configuration.Route" href="configuration.html#smartapp.api.smartapp.configuration.Route">Route</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Register a new route for the SmartApp, the method name must
+be an async function which extends the base SmartApp class</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>verb</code></strong> :&ensp;<code>str</code></dt>
+<dd>HTTP method name</dd>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>relative route URI</dd>
+<dt><strong><code>func</code></strong> :&ensp;<code>str</code></dt>
+<dd>function handler which extends SmartApp</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code><a title="smartapp.api.smartapp.configuration.Route" href="configuration.html#smartapp.api.smartapp.configuration.Route">Route</a></code>: the new route</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def route(self, verb: str, path: str, func: str) -&gt; configuration.Route:
+    &#34;&#34;&#34;Register a new route for the SmartApp, the method name must
+    be an async function which extends the base SmartApp class
+
+    Args:
+        verb (str): HTTP method name
+        path (str): relative route URI
+        func (str): function handler which extends SmartApp
+
+    Returns:
+        `smartapp.api.smartapp.configuration.Route`: the new route
+    &#34;&#34;&#34;
+    route = configuration.Route(verb=verb, path=path, func=func)
+    self.routes.append(route)
+    return route</code></pre>
+</details>
+</dd>
+<dt id="smartapp.api.smartapp.smartapp.SmartApp.subscribe"><code class="name flex">
+<span>async def <span class="ident">subscribe</span></span>(<span>self, type: models.SubscriptionType, obj: Dict[str, List[str]]) ‑> <a title="smartapp.api.models.smartapp.Subscription" href="../models/smartapp.html#smartapp.api.models.smartapp.Subscription">Subscription</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create subscription from the AppContext to specified source</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt>type (<code>smartapp.api.models.SubscriptionType</code>): incoming request to a SmartApp Route</dt>
+<dt><strong><code>obj</code></strong> :&ensp;<code>dict</code></dt>
+<dd>model specified by SubscrtionType</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code><a title="smartapp.api.models.smartapp.Subscription" href="../models/smartapp.html#smartapp.api.models.smartapp.Subscription">Subscription</a></code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@task.AppTask.handle_excs
+async def subscribe(self, type: models.SubscriptionType,
+                          obj: Dict[str, List[str]]) -&gt; models.smartapp.Subscription:
+    &#34;&#34;&#34;Create subscription from the AppContext to specified source
+
+    Args:
+        type (`smartapp.api.models.SubscriptionType`): incoming request to a SmartApp Route
+        obj (dict): model specified by SubscrtionType
+
+    Returns:
+        `smartapp.api.models.smartapp.Subscription`
+    &#34;&#34;&#34;
+
+    if not isinstance(type, models.SubscriptionType):
+        raise TypeError(&#34;subscribe() requires a valid SubscriptionType&#34;)
+
+    obj.update({&#39;subscriptionName&#39;: &#39;s_{}&#39;.format(
+        round(random.random() * 1000000)
+    ), &#39;stateChangeOnly&#39;: True, &#39;modes&#39;: []})
+    if type == models.SubscriptionType.DEVICE:
+        obj = {&#39;device&#39;: obj}
+    if type == models.SubscriptionType.MODE:
+        obj = {&#39;mode&#39;: obj}
+    if type == models.SubscriptionType.DEVICE_LIFECYCLE:
+        obj = {&#39;deviceLifecycle&#39;: obj}
+    if type == models.SubscriptionType.CAPABILITY:
+        obj = {&#39;capability&#39;: obj}
+    obj.update({&#39;sourceType&#39;: str.value})
+
+    return await smartthings.InstalledApp(
+        session=self.session, app_id=self.app_id
+    ).subscribe(obj)</code></pre>
+</details>
+</dd>
+<dt id="smartapp.api.smartapp.smartapp.SmartApp.subscriptions"><code class="name flex">
+<span>async def <span class="ident">subscriptions</span></span>(<span>self) ‑> <a title="smartapp.api.models.SubscriptionCollection" href="../models/index.html#smartapp.api.models.SubscriptionCollection">SubscriptionCollection</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>List this AppContext Subscriptions</p>
+<h2 id="returns">Returns</h2>
+<p><code><a title="smartapp.api.models.SubscriptionCollection" href="../models/index.html#smartapp.api.models.SubscriptionCollection">SubscriptionCollection</a></code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@task.AppTask.handle_excs
+async def subscriptions(self) -&gt; models.SubscriptionCollection:
+    &#34;&#34;&#34;List this AppContext Subscriptions
+
+    Returns:
+        `smartapp.api.models.SubscriptionCollection`
+    &#34;&#34;&#34;
+
+    async for item in smartthings.InstalledApp(
+                session=self.session, app_id=self.app_id
+            ).subscriptions():
+        yield item</code></pre>
+</details>
+</dd>
+<dt id="smartapp.api.smartapp.smartapp.SmartApp.unsubscribe"><code class="name flex">
+<span>async def <span class="ident">unsubscribe</span></span>(<span>self, id: str = '') ‑> Dict[Any, Any]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Delete subscription with ID or all subscriptions if not specified</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong> :&ensp;<code>str</code></dt>
+<dd>SubscriptionID</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>dict</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@task.AppTask.handle_excs
+async def unsubscribe(self, id: str=str()) -&gt; Dict[Any, Any]:
+    &#34;&#34;&#34;Delete subscription with ID or all subscriptions if not specified
+
+    Args:
+        id (str): SubscriptionID
+
+    Returns:
+        dict
+    &#34;&#34;&#34;
+
+    installedapp=smartthings.InstalledApp(
+        session=self.session, app_id=self.app_id
+    )
+    if id:
+        return installedapp.ubsubscribe(id)
+    for id in installedapp.subscriptions():
+        task.AppTask(installedapp.unsubscribe, id)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="smartapp.api.smartapp" href="index.html">smartapp.api.smartapp</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="smartapp.api.smartapp.smartapp.SmartApp" href="#smartapp.api.smartapp.smartapp.SmartApp">SmartApp</a></code></h4>
+<ul class="two-column">
+<li><code><a title="smartapp.api.smartapp.smartapp.SmartApp.app_event" href="#smartapp.api.smartapp.smartapp.SmartApp.app_event">app_event</a></code></li>
+<li><code><a title="smartapp.api.smartapp.smartapp.SmartApp.app_id" href="#smartapp.api.smartapp.smartapp.SmartApp.app_id">app_id</a></code></li>
+<li><code><a title="smartapp.api.smartapp.smartapp.SmartApp.authorize" href="#smartapp.api.smartapp.smartapp.SmartApp.authorize">authorize</a></code></li>
+<li><code><a title="smartapp.api.smartapp.smartapp.SmartApp.grant" href="#smartapp.api.smartapp.smartapp.SmartApp.grant">grant</a></code></li>
+<li><code><a title="smartapp.api.smartapp.smartapp.SmartApp.location_id" href="#smartapp.api.smartapp.smartapp.SmartApp.location_id">location_id</a></code></li>
+<li><code><a title="smartapp.api.smartapp.smartapp.SmartApp.page" href="#smartapp.api.smartapp.smartapp.SmartApp.page">page</a></code></li>
+<li><code><a title="smartapp.api.smartapp.smartapp.SmartApp.route" href="#smartapp.api.smartapp.smartapp.SmartApp.route">route</a></code></li>
+<li><code><a title="smartapp.api.smartapp.smartapp.SmartApp.session" href="#smartapp.api.smartapp.smartapp.SmartApp.session">session</a></code></li>
+<li><code><a title="smartapp.api.smartapp.smartapp.SmartApp.subscribe" href="#smartapp.api.smartapp.smartapp.SmartApp.subscribe">subscribe</a></code></li>
+<li><code><a title="smartapp.api.smartapp.smartapp.SmartApp.subscriptions" href="#smartapp.api.smartapp.smartapp.SmartApp.subscriptions">subscriptions</a></code></li>
+<li><code><a title="smartapp.api.smartapp.smartapp.SmartApp.unsubscribe" href="#smartapp.api.smartapp.smartapp.SmartApp.unsubscribe">unsubscribe</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
