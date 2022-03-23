@@ -3,4 +3,4 @@ title: projects
 plugins:
   - jekyll-redirect-from
 projects:
-  - smartthings-sdk-python
+  - smartapp-sdk-python
