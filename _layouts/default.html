@@ -22,9 +22,13 @@
         {% endif %}
         
         {% for project in site.projects %}
-        <p class="view"><tt>{{ site.description | default: project }}</tt></p>
-        <p class="view"><a href="{{ site.uri_base }}/{{ project }}/docs">Documentation</a></p>
-        <p class="view"><a href="{{ site.uri_base }}/{{ project }}">Code at GitHub </a></p>
+        <p class="view">
+        <dl>
+          <dt>{{ site.description | default: project }}</dt>
+          <dd><a href="{{ site.uri_base }}/{{ project }}/docs">Documentation</a></dd>
+          <dd><a href="{{ site.uri_base }}/{{ project }}">Code at GitHub </a></dd>
+        </dl>
+        </p>
         {% endfor %}
       </header>
       <section>
