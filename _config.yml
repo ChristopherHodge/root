@@ -1,4 +1,5 @@
 theme: jekyll-theme-minimal
+logo: /assets/logo.png
 title: projects
 uri_base: https://github.hodge-labs.us
 plugins:
