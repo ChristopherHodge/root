@@ -22,9 +22,9 @@
         {% endif %}
         
         {% for project in site.projects %}
-        <p>{{ site.description | default: project }}</p>
-        <p class="view"><a href="https://github.hodge-labs.us/{{ project }}/docs">{{ project }} Documentation<small>github.hodge-labs.us/{{ project }}/docs<small</small></a></p>
-        <p class="view"><a href="https://github.hodge-labs.us/{{ project }}">{{ project }} on GitHub <small>github.hodge-labs.us/{{ project }}</small></a></p>
+        <h3>{{ site.description | default: project }}</h3>
+        <p class="view"><a href="{{ site.uri_base }}/{{ project }}/docs">Documentation</a></p>
+        <p class="view"><a href="{{ site.uri_base }}/{{ project }}">Code at GitHub </a></p>
         {% endfor %}
       </header>
       <section>

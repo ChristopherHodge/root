@@ -1,5 +1,6 @@
 theme: jekyll-theme-minimal
 title: projects
+uri_base: https://github.hodge-labs.us
 plugins:
   - jekyll-redirect-from
 projects:
