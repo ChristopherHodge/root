@@ -17,13 +17,12 @@
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.title }}</a></h1>
 
-        {% for project in site.projects %}
         {% if site.logo %}
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
-
+        
+        {% for project in site.projects %}
         <p>{{ site.description | default: project }}</p>
-
         <p class="view"><a href="https://github.hodge-labs.us/{{ project }}">View {{ project }} on GitHub <small>github.hodge-labs.us/{{ project }}</small></a></p>
         {% endfor %}
       </header>
