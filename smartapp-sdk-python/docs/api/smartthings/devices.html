@@ -60,7 +60,7 @@ class Device(http.RESTClient):
         ).items:
             yield item
 
-    async def new(self, app_id, location_id, profile_id, label):
+    async def create(self, app_id, location_id, profile_id, label):
         &#34;&#34;&#34;Use the SmartApp auth to create a device, with itself as
         the owner.
 
@@ -71,12 +71,12 @@ class Device(http.RESTClient):
             label (str): Device Label
 
         Returns:
-            smartapp.api.models.smartapp.Device
+            smartapp.api.models.smartthings.Device
         &#34;&#34;&#34;
-        return models.smartapp.Device.parse_obj(
+        return models.smartthings.Device.parse_obj(
             await self.do(&#39;POST&#39;, &#39;/&#39;,
-                models.smartapp.DeviceInstallRequest(
-                    app=models.smartapp.App(
+                models.smartthings.DeviceInstallRequest(
+                    app=models.smartthings.App(
                         profileId=profile_id,
                         installedAppId=app_id
                     ),
@@ -92,16 +92,16 @@ class Device(http.RESTClient):
 
         Args:
             device_id (str): SmartThings DeviceID
-            event (`smartapp.api.models.smartapp.DeviceEventRequest`): Device Event model
+            event (DeviceEventRequest): Device Event model
 
         Returns:
             dict
         &#34;&#34;&#34;
         path = &#39;/{}/events&#39;.format(device_api_id)
         return await self.do(&#39;POST&#39;, path,
-            models.smartapp.DeviceEventsRequest(
+            models.smartthings.DeviceEventsRequest(
                 deviceEvents=[
-                    models.smartapp.DeviceStateEvent.parse_obj(event)
+                    models.smartthings.DeviceStateEvent.parse_obj(event)
                 ]
             ).dict()
          )
@@ -111,14 +111,14 @@ class Device(http.RESTClient):
 
         Args:
             device_api_id (str): DeviceID
-            update (str): `smartapp.api.models.smartapp.UpdateDeviceRequest`
+            update (str): UpdateDeviceRequest
 
         Return:
-            `smartapp.api.models.smartapp.Device`
+            smartapp.api.models.smartthings.Device
         &#34;&#34;&#34;
-        return models.smartapp.Device.parse_obj(
+        return models.smartthings.Device.parse_obj(
             await self.do(&#39;PUT&#39;, &#39;/{}&#39;.format(device_api_id),
-                models.smartapp.UpdateDeviceRequest.parse_obj(
+                models.smartthings.UpdateDeviceRequest.parse_obj(
                     update
                 ).dict()
             )
@@ -175,7 +175,7 @@ than an 'ORM-like' interface.</p></div>
         ).items:
             yield item
 
-    async def new(self, app_id, location_id, profile_id, label):
+    async def create(self, app_id, location_id, profile_id, label):
         &#34;&#34;&#34;Use the SmartApp auth to create a device, with itself as
         the owner.
 
@@ -186,12 +186,12 @@ than an 'ORM-like' interface.</p></div>
             label (str): Device Label
 
         Returns:
-            smartapp.api.models.smartapp.Device
+            smartapp.api.models.smartthings.Device
         &#34;&#34;&#34;
-        return models.smartapp.Device.parse_obj(
+        return models.smartthings.Device.parse_obj(
             await self.do(&#39;POST&#39;, &#39;/&#39;,
-                models.smartapp.DeviceInstallRequest(
-                    app=models.smartapp.App(
+                models.smartthings.DeviceInstallRequest(
+                    app=models.smartthings.App(
                         profileId=profile_id,
                         installedAppId=app_id
                     ),
@@ -207,16 +207,16 @@ than an 'ORM-like' interface.</p></div>
 
         Args:
             device_id (str): SmartThings DeviceID
-            event (`smartapp.api.models.smartapp.DeviceEventRequest`): Device Event model
+            event (DeviceEventRequest): Device Event model
 
         Returns:
             dict
         &#34;&#34;&#34;
         path = &#39;/{}/events&#39;.format(device_api_id)
         return await self.do(&#39;POST&#39;, path,
-            models.smartapp.DeviceEventsRequest(
+            models.smartthings.DeviceEventsRequest(
                 deviceEvents=[
-                    models.smartapp.DeviceStateEvent.parse_obj(event)
+                    models.smartthings.DeviceStateEvent.parse_obj(event)
                 ]
             ).dict()
          )
@@ -226,14 +226,14 @@ than an 'ORM-like' interface.</p></div>
 
         Args:
             device_api_id (str): DeviceID
-            update (str): `smartapp.api.models.smartapp.UpdateDeviceRequest`
+            update (str): UpdateDeviceRequest
 
         Return:
-            `smartapp.api.models.smartapp.Device`
+            smartapp.api.models.smartthings.Device
         &#34;&#34;&#34;
-        return models.smartapp.Device.parse_obj(
+        return models.smartthings.Device.parse_obj(
             await self.do(&#39;PUT&#39;, &#39;/{}&#39;.format(device_api_id),
-                models.smartapp.UpdateDeviceRequest.parse_obj(
+                models.smartthings.UpdateDeviceRequest.parse_obj(
                     update
                 ).dict()
             )
@@ -245,6 +245,56 @@ than an 'ORM-like' interface.</p></div>
 </ul>
 <h3>Methods</h3>
 <dl>
+<dt id="smartapp.api.smartthings.devices.Device.create"><code class="name flex">
+<span>async def <span class="ident">create</span></span>(<span>self, app_id, location_id, profile_id, label)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Use the SmartApp auth to create a device, with itself as
+the owner.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>app_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>InstalledAppId</dd>
+<dt><strong><code>location_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>LocationID</dd>
+<dt><strong><code>profile_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>ProfileID</dd>
+<dt><strong><code>label</code></strong> :&ensp;<code>str</code></dt>
+<dd>Device Label</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>smartapp.api.models.smartthings.Device</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def create(self, app_id, location_id, profile_id, label):
+    &#34;&#34;&#34;Use the SmartApp auth to create a device, with itself as
+    the owner.
+
+    Args:
+        app_id (str): InstalledAppId
+        location_id (str): LocationID
+        profile_id (str): ProfileID
+        label (str): Device Label
+
+    Returns:
+        smartapp.api.models.smartthings.Device
+    &#34;&#34;&#34;
+    return models.smartthings.Device.parse_obj(
+        await self.do(&#39;POST&#39;, &#39;/&#39;,
+            models.smartthings.DeviceInstallRequest(
+                app=models.smartthings.App(
+                    profileId=profile_id,
+                    installedAppId=app_id
+                ),
+                locationId=location_id,
+                label=label
+            ).dict()
+        )
+    )</code></pre>
+</details>
+</dd>
 <dt id="smartapp.api.smartthings.devices.Device.event"><code class="name flex">
 <span>async def <span class="ident">event</span></span>(<span>self, device_api_id, event)</span>
 </code></dt>
@@ -255,8 +305,9 @@ Uses SmartApp auth which must also be the device owner.</p>
 <dl>
 <dt><strong><code>device_id</code></strong> :&ensp;<code>str</code></dt>
 <dd>SmartThings DeviceID</dd>
+<dt><strong><code>event</code></strong> :&ensp;<code>DeviceEventRequest</code></dt>
+<dd>Device Event model</dd>
 </dl>
-<p>event (<code>smartapp.api.models.smartapp.DeviceEventRequest</code>): Device Event model</p>
 <h2 id="returns">Returns</h2>
 <p>dict</p></div>
 <details class="source">
@@ -269,16 +320,16 @@ Uses SmartApp auth which must also be the device owner.</p>
 
     Args:
         device_id (str): SmartThings DeviceID
-        event (`smartapp.api.models.smartapp.DeviceEventRequest`): Device Event model
+        event (DeviceEventRequest): Device Event model
 
     Returns:
         dict
     &#34;&#34;&#34;
     path = &#39;/{}/events&#39;.format(device_api_id)
     return await self.do(&#39;POST&#39;, path,
-        models.smartapp.DeviceEventsRequest(
+        models.smartthings.DeviceEventsRequest(
             deviceEvents=[
-                models.smartapp.DeviceStateEvent.parse_obj(event)
+                models.smartthings.DeviceStateEvent.parse_obj(event)
             ]
         ).dict()
      )</code></pre>
@@ -311,56 +362,6 @@ for the full response.</p>
         yield item</code></pre>
 </details>
 </dd>
-<dt id="smartapp.api.smartthings.devices.Device.new"><code class="name flex">
-<span>async def <span class="ident">new</span></span>(<span>self, app_id, location_id, profile_id, label)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Use the SmartApp auth to create a device, with itself as
-the owner.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>app_id</code></strong> :&ensp;<code>str</code></dt>
-<dd>InstalledAppId</dd>
-<dt><strong><code>location_id</code></strong> :&ensp;<code>str</code></dt>
-<dd>LocationID</dd>
-<dt><strong><code>profile_id</code></strong> :&ensp;<code>str</code></dt>
-<dd>ProfileID</dd>
-<dt><strong><code>label</code></strong> :&ensp;<code>str</code></dt>
-<dd>Device Label</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<p>smartapp.api.models.smartapp.Device</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">async def new(self, app_id, location_id, profile_id, label):
-    &#34;&#34;&#34;Use the SmartApp auth to create a device, with itself as
-    the owner.
-
-    Args:
-        app_id (str): InstalledAppId
-        location_id (str): LocationID
-        profile_id (str): ProfileID
-        label (str): Device Label
-
-    Returns:
-        smartapp.api.models.smartapp.Device
-    &#34;&#34;&#34;
-    return models.smartapp.Device.parse_obj(
-        await self.do(&#39;POST&#39;, &#39;/&#39;,
-            models.smartapp.DeviceInstallRequest(
-                app=models.smartapp.App(
-                    profileId=profile_id,
-                    installedAppId=app_id
-                ),
-                locationId=location_id,
-                label=label
-            ).dict()
-        )
-    )</code></pre>
-</details>
-</dd>
 <dt id="smartapp.api.smartthings.devices.Device.update"><code class="name flex">
 <span>async def <span class="ident">update</span></span>(<span>self, device_api_id, update)</span>
 </code></dt>
@@ -371,10 +372,10 @@ the owner.</p>
 <dt><strong><code>device_api_id</code></strong> :&ensp;<code>str</code></dt>
 <dd>DeviceID</dd>
 <dt><strong><code>update</code></strong> :&ensp;<code>str</code></dt>
-<dd><code><a title="smartapp.api.models.smartapp.UpdateDeviceRequest" href="../models/smartapp.html#smartapp.api.models.smartapp.UpdateDeviceRequest">UpdateDeviceRequest</a></code></dd>
+<dd>UpdateDeviceRequest</dd>
 </dl>
 <h2 id="return">Return</h2>
-<p><code><a title="smartapp.api.models.smartapp.Device" href="../models/smartapp.html#smartapp.api.models.smartapp.Device">Device</a></code></p></div>
+<p>smartapp.api.models.smartthings.Device</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -384,14 +385,14 @@ the owner.</p>
 
     Args:
         device_api_id (str): DeviceID
-        update (str): `smartapp.api.models.smartapp.UpdateDeviceRequest`
+        update (str): UpdateDeviceRequest
 
     Return:
-        `smartapp.api.models.smartapp.Device`
+        smartapp.api.models.smartthings.Device
     &#34;&#34;&#34;
-    return models.smartapp.Device.parse_obj(
+    return models.smartthings.Device.parse_obj(
         await self.do(&#39;PUT&#39;, &#39;/{}&#39;.format(device_api_id),
-            models.smartapp.UpdateDeviceRequest.parse_obj(
+            models.smartthings.UpdateDeviceRequest.parse_obj(
                 update
             ).dict()
         )
@@ -419,9 +420,9 @@ the owner.</p>
 <li>
 <h4><code><a title="smartapp.api.smartthings.devices.Device" href="#smartapp.api.smartthings.devices.Device">Device</a></code></h4>
 <ul class="">
+<li><code><a title="smartapp.api.smartthings.devices.Device.create" href="#smartapp.api.smartthings.devices.Device.create">create</a></code></li>
 <li><code><a title="smartapp.api.smartthings.devices.Device.event" href="#smartapp.api.smartthings.devices.Device.event">event</a></code></li>
 <li><code><a title="smartapp.api.smartthings.devices.Device.list" href="#smartapp.api.smartthings.devices.Device.list">list</a></code></li>
-<li><code><a title="smartapp.api.smartthings.devices.Device.new" href="#smartapp.api.smartthings.devices.Device.new">new</a></code></li>
 <li><code><a title="smartapp.api.smartthings.devices.Device.update" href="#smartapp.api.smartthings.devices.Device.update">update</a></code></li>
 </ul>
 </li>

@@ -90,6 +90,12 @@ Permissions  = List[str]
 Capabilities = List[str]
 Options      = List[Option]
 
+class Subscription(smartthings.Subscription):
+    pass
+
+class UpdateEvent(smartthings.DeviceStateEvent):
+    pass
+
 class SettingType(Enum):
     STRING     = &#39;STRING&#39;
     DEVICE     = &#39;DEVICE&#39;
@@ -218,34 +224,7 @@ class LifecycleResponse(BaseModel):
    uninstallData:      Optional[UninstallData]
    configurationData:  Optional[ConfigurationData]
    confirmationData:   Optional[ConfirmationData]
-   pingData:           Optional[PingData]
-
-class Device(smartthings.Device):
-    pass
-
-class UpdateDeviceRequest(smartthings.UpdateDeviceRequest):
-    pass
-
-class CreateInstalledAppEventRequest(smartthings.CreateInstalledAppEventsRequest):
-    pass
-
-class SmartAppEventRequest(smartthings.SmartAppEventRequest):
-    pass
-
-class DeviceStateEvent(smartthings.DeviceStateEvent):
-    pass
-
-class DeviceInstallRequest(smartthings.DeviceInstallRequest):
-    pass
-
-class Subscription(smartthings.Subscription):
-    pass
-
-class SubscriptionRequest(smartthings.Subscription):
-    pass
-
-class UpdateEvent(smartthings.DeviceStateEvent):
-    pass</code></pre>
+   pingData:           Optional[PingData]</code></pre>
 </details>
 </section>
 <section>
@@ -420,186 +399,6 @@ class UpdateEvent(smartthings.DeviceStateEvent):
 </dd>
 </dl>
 </dd>
-<dt id="smartapp.api.models.smartapp.CreateInstalledAppEventRequest"><code class="flex name class">
-<span>class <span class="ident">CreateInstalledAppEventRequest</span></span>
-<span>(</span><span>**data: Any)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
-<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class CreateInstalledAppEventRequest(smartthings.CreateInstalledAppEventsRequest):
-    pass</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>smartapp.api.models.smartthings.CreateInstalledAppEventsRequest</li>
-<li>pydantic.main.BaseModel</li>
-<li>pydantic.utils.Representation</li>
-</ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="smartapp.api.models.smartapp.CreateInstalledAppEventRequest.smartAppDashboardCardEvents"><code class="name">var <span class="ident">smartAppDashboardCardEvents</span> : Optional[List[smartapp.api.models.smartthings.SmartAppDashboardCardEventRequest]]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.CreateInstalledAppEventRequest.smartAppEvents"><code class="name">var <span class="ident">smartAppEvents</span> : Optional[List[smartapp.api.models.smartthings.SmartAppEventRequest]]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device"><code class="flex name class">
-<span>class <span class="ident">Device</span></span>
-<span>(</span><span>**data: Any)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
-<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class Device(smartthings.Device):
-    pass</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>smartapp.api.models.smartthings.Device</li>
-<li>pydantic.main.BaseModel</li>
-<li>pydantic.utils.Representation</li>
-</ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="smartapp.api.models.smartapp.Device.app"><code class="name">var <span class="ident">app</span> : Optional[smartapp.api.models.smartthings.AppDeviceDetails]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.ble"><code class="name">var <span class="ident">ble</span> : Optional[smartapp.api.models.smartthings.BleDeviceDetails]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.bleD2D"><code class="name">var <span class="ident">bleD2D</span> : Optional[smartapp.api.models.smartthings.BleD2DDeviceDetails]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.childDevices"><code class="name">var <span class="ident">childDevices</span> : Optional[List[smartapp.api.models.smartthings.Device]]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.components"><code class="name">var <span class="ident">components</span> : Optional[List[smartapp.api.models.smartthings.DeviceComponent]]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.createTime"><code class="name">var <span class="ident">createTime</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.deviceId"><code class="name">var <span class="ident">deviceId</span> : smartapp.api.models.smartthings.DeviceId</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.deviceManufacturerCode"><code class="name">var <span class="ident">deviceManufacturerCode</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.deviceNetworkType"><code class="name">var <span class="ident">deviceNetworkType</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.deviceTypeId"><code class="name">var <span class="ident">deviceTypeId</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.deviceTypeName"><code class="name">var <span class="ident">deviceTypeName</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.dth"><code class="name">var <span class="ident">dth</span> : Optional[smartapp.api.models.smartthings.DthDeviceDetails]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.ir"><code class="name">var <span class="ident">ir</span> : Optional[smartapp.api.models.smartthings.IrDeviceDetails]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.irOcf"><code class="name">var <span class="ident">irOcf</span> : Optional[smartapp.api.models.smartthings.IrDeviceDetails]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.label"><code class="name">var <span class="ident">label</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.lan"><code class="name">var <span class="ident">lan</span> : Optional[smartapp.api.models.smartthings.LanDeviceDetails]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.locationId"><code class="name">var <span class="ident">locationId</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.manufacturerName"><code class="name">var <span class="ident">manufacturerName</span> : str</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.matter"><code class="name">var <span class="ident">matter</span> : Optional[smartapp.api.models.smartthings.MatterDeviceDetails]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.name"><code class="name">var <span class="ident">name</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.ocf"><code class="name">var <span class="ident">ocf</span> : Optional[smartapp.api.models.smartthings.OcfDeviceDetails]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.ownerId"><code class="name">var <span class="ident">ownerId</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.parentDeviceId"><code class="name">var <span class="ident">parentDeviceId</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.presentationId"><code class="name">var <span class="ident">presentationId</span> : str</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.profile"><code class="name">var <span class="ident">profile</span> : Optional[smartapp.api.models.smartthings.DeviceProfileReference]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.restrictionTier"><code class="name">var <span class="ident">restrictionTier</span> : int</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.roomId"><code class="name">var <span class="ident">roomId</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.type"><code class="name">var <span class="ident">type</span> : smartapp.api.models.smartthings.DeviceIntegrationType</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.viper"><code class="name">var <span class="ident">viper</span> : Optional[smartapp.api.models.smartthings.ViperDeviceDetails]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.zigbee"><code class="name">var <span class="ident">zigbee</span> : Optional[smartapp.api.models.smartthings.ZigbeeDeviceDetails]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.Device.zwave"><code class="name">var <span class="ident">zwave</span> : Optional[smartapp.api.models.smartthings.ZwaveDeviceDetails]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
-</dd>
 <dt id="smartapp.api.models.smartapp.DeviceEvent"><code class="flex name class">
 <span>class <span class="ident">DeviceEvent</span></span>
 <span>(</span><span>**data: Any)</span>
@@ -627,94 +426,6 @@ class UpdateEvent(smartthings.DeviceStateEvent):
 <div class="desc"></div>
 </dd>
 <dt id="smartapp.api.models.smartapp.DeviceEvent.event"><code class="name">var <span class="ident">event</span> : smartapp.api.models.smartthings.DeviceStateEvent</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
-</dd>
-<dt id="smartapp.api.models.smartapp.DeviceInstallRequest"><code class="flex name class">
-<span>class <span class="ident">DeviceInstallRequest</span></span>
-<span>(</span><span>**data: Any)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
-<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class DeviceInstallRequest(smartthings.DeviceInstallRequest):
-    pass</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>smartapp.api.models.smartthings.DeviceInstallRequest</li>
-<li>pydantic.main.BaseModel</li>
-<li>pydantic.utils.Representation</li>
-</ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="smartapp.api.models.smartapp.DeviceInstallRequest.app"><code class="name">var <span class="ident">app</span> : smartapp.api.models.smartthings.App</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.DeviceInstallRequest.label"><code class="name">var <span class="ident">label</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.DeviceInstallRequest.locationId"><code class="name">var <span class="ident">locationId</span> : str</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.DeviceInstallRequest.roomId"><code class="name">var <span class="ident">roomId</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
-</dd>
-<dt id="smartapp.api.models.smartapp.DeviceStateEvent"><code class="flex name class">
-<span>class <span class="ident">DeviceStateEvent</span></span>
-<span>(</span><span>**data: Any)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
-<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class DeviceStateEvent(smartthings.DeviceStateEvent):
-    pass</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>smartapp.api.models.smartthings.DeviceStateEvent</li>
-<li>pydantic.main.BaseModel</li>
-<li>pydantic.utils.Representation</li>
-</ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="smartapp.api.models.smartapp.DeviceStateEvent.attribute"><code class="name">var <span class="ident">attribute</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.DeviceStateEvent.capability"><code class="name">var <span class="ident">capability</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.DeviceStateEvent.component"><code class="name">var <span class="ident">component</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.DeviceStateEvent.data"><code class="name">var <span class="ident">data</span> : Optional[Dict[str, Dict[str, Any]]]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.DeviceStateEvent.unit"><code class="name">var <span class="ident">unit</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.DeviceStateEvent.value"><code class="name">var <span class="ident">value</span> : Any</code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
@@ -1736,74 +1447,6 @@ class UpdateEvent(smartthings.DeviceStateEvent):
 </dd>
 </dl>
 </dd>
-<dt id="smartapp.api.models.smartapp.SubscriptionRequest"><code class="flex name class">
-<span>class <span class="ident">SubscriptionRequest</span></span>
-<span>(</span><span>**data: Any)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
-<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class SubscriptionRequest(smartthings.Subscription):
-    pass</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>smartapp.api.models.smartthings.Subscription</li>
-<li>pydantic.main.BaseModel</li>
-<li>pydantic.utils.Representation</li>
-</ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="smartapp.api.models.smartapp.SubscriptionRequest.capability"><code class="name">var <span class="ident">capability</span> : Optional[smartapp.api.models.smartthings.CapabilitySubscriptionDetail]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.SubscriptionRequest.device"><code class="name">var <span class="ident">device</span> : Optional[smartapp.api.models.smartthings.DeviceSubscriptionDetail]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.SubscriptionRequest.deviceHealth"><code class="name">var <span class="ident">deviceHealth</span> : Optional[smartapp.api.models.smartthings.DeviceHealthDetail]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.SubscriptionRequest.deviceLifecycle"><code class="name">var <span class="ident">deviceLifecycle</span> : Optional[smartapp.api.models.smartthings.DeviceLifecycleDetail]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.SubscriptionRequest.hubHealth"><code class="name">var <span class="ident">hubHealth</span> : Optional[smartapp.api.models.smartthings.HubHealthDetail]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.SubscriptionRequest.id"><code class="name">var <span class="ident">id</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.SubscriptionRequest.installedAppId"><code class="name">var <span class="ident">installedAppId</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.SubscriptionRequest.mode"><code class="name">var <span class="ident">mode</span> : Optional[smartapp.api.models.smartthings.ModeSubscriptionDetail]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.SubscriptionRequest.sceneLifecycle"><code class="name">var <span class="ident">sceneLifecycle</span> : Optional[smartapp.api.models.smartthings.SceneLifecycleDetail]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.SubscriptionRequest.securityArmState"><code class="name">var <span class="ident">securityArmState</span> : Optional[smartapp.api.models.smartthings.SecurityArmStateDetail]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.SubscriptionRequest.sourceType"><code class="name">var <span class="ident">sourceType</span> : Optional[smartapp.api.models.smartthings.SubscriptionSource]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
-</dd>
 <dt id="smartapp.api.models.smartapp.SubscriptionType"><code class="flex name class">
 <span>class <span class="ident">SubscriptionType</span></span>
 <span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
@@ -1989,46 +1632,6 @@ class UpdateEvent(smartthings.DeviceStateEvent):
 </dd>
 </dl>
 </dd>
-<dt id="smartapp.api.models.smartapp.UpdateDeviceRequest"><code class="flex name class">
-<span>class <span class="ident">UpdateDeviceRequest</span></span>
-<span>(</span><span>**data: Any)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Create a new model by parsing and validating input data from keyword arguments.</p>
-<p>Raises ValidationError if the input data cannot be parsed to form a valid model.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class UpdateDeviceRequest(smartthings.UpdateDeviceRequest):
-    pass</code></pre>
-</details>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>smartapp.api.models.smartthings.UpdateDeviceRequest</li>
-<li>pydantic.main.BaseModel</li>
-<li>pydantic.utils.Representation</li>
-</ul>
-<h3>Class variables</h3>
-<dl>
-<dt id="smartapp.api.models.smartapp.UpdateDeviceRequest.components"><code class="name">var <span class="ident">components</span> : Optional[List[smartapp.api.models.smartthings.UpdateDeviceComponent]]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.UpdateDeviceRequest.label"><code class="name">var <span class="ident">label</span> : Optional[smartapp.api.models.smartthings.ConstrainedStrValue]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.UpdateDeviceRequest.locationId"><code class="name">var <span class="ident">locationId</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="smartapp.api.models.smartapp.UpdateDeviceRequest.roomId"><code class="name">var <span class="ident">roomId</span> : Optional[str]</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
-</dd>
 <dt id="smartapp.api.models.smartapp.UpdateEvent"><code class="flex name class">
 <span>class <span class="ident">UpdateEvent</span></span>
 <span>(</span><span>**data: Any)</span>
@@ -2127,73 +1730,10 @@ class UpdateEvent(smartthings.DeviceStateEvent):
 </ul>
 </li>
 <li>
-<h4><code><a title="smartapp.api.models.smartapp.CreateInstalledAppEventRequest" href="#smartapp.api.models.smartapp.CreateInstalledAppEventRequest">CreateInstalledAppEventRequest</a></code></h4>
-<ul class="">
-<li><code><a title="smartapp.api.models.smartapp.CreateInstalledAppEventRequest.smartAppDashboardCardEvents" href="#smartapp.api.models.smartapp.CreateInstalledAppEventRequest.smartAppDashboardCardEvents">smartAppDashboardCardEvents</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.CreateInstalledAppEventRequest.smartAppEvents" href="#smartapp.api.models.smartapp.CreateInstalledAppEventRequest.smartAppEvents">smartAppEvents</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="smartapp.api.models.smartapp.Device" href="#smartapp.api.models.smartapp.Device">Device</a></code></h4>
-<ul class="">
-<li><code><a title="smartapp.api.models.smartapp.Device.app" href="#smartapp.api.models.smartapp.Device.app">app</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.ble" href="#smartapp.api.models.smartapp.Device.ble">ble</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.bleD2D" href="#smartapp.api.models.smartapp.Device.bleD2D">bleD2D</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.childDevices" href="#smartapp.api.models.smartapp.Device.childDevices">childDevices</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.components" href="#smartapp.api.models.smartapp.Device.components">components</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.createTime" href="#smartapp.api.models.smartapp.Device.createTime">createTime</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.deviceId" href="#smartapp.api.models.smartapp.Device.deviceId">deviceId</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.deviceManufacturerCode" href="#smartapp.api.models.smartapp.Device.deviceManufacturerCode">deviceManufacturerCode</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.deviceNetworkType" href="#smartapp.api.models.smartapp.Device.deviceNetworkType">deviceNetworkType</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.deviceTypeId" href="#smartapp.api.models.smartapp.Device.deviceTypeId">deviceTypeId</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.deviceTypeName" href="#smartapp.api.models.smartapp.Device.deviceTypeName">deviceTypeName</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.dth" href="#smartapp.api.models.smartapp.Device.dth">dth</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.ir" href="#smartapp.api.models.smartapp.Device.ir">ir</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.irOcf" href="#smartapp.api.models.smartapp.Device.irOcf">irOcf</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.label" href="#smartapp.api.models.smartapp.Device.label">label</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.lan" href="#smartapp.api.models.smartapp.Device.lan">lan</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.locationId" href="#smartapp.api.models.smartapp.Device.locationId">locationId</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.manufacturerName" href="#smartapp.api.models.smartapp.Device.manufacturerName">manufacturerName</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.matter" href="#smartapp.api.models.smartapp.Device.matter">matter</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.name" href="#smartapp.api.models.smartapp.Device.name">name</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.ocf" href="#smartapp.api.models.smartapp.Device.ocf">ocf</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.ownerId" href="#smartapp.api.models.smartapp.Device.ownerId">ownerId</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.parentDeviceId" href="#smartapp.api.models.smartapp.Device.parentDeviceId">parentDeviceId</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.presentationId" href="#smartapp.api.models.smartapp.Device.presentationId">presentationId</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.profile" href="#smartapp.api.models.smartapp.Device.profile">profile</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.restrictionTier" href="#smartapp.api.models.smartapp.Device.restrictionTier">restrictionTier</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.roomId" href="#smartapp.api.models.smartapp.Device.roomId">roomId</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.type" href="#smartapp.api.models.smartapp.Device.type">type</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.viper" href="#smartapp.api.models.smartapp.Device.viper">viper</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.zigbee" href="#smartapp.api.models.smartapp.Device.zigbee">zigbee</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.Device.zwave" href="#smartapp.api.models.smartapp.Device.zwave">zwave</a></code></li>
-</ul>
-</li>
-<li>
 <h4><code><a title="smartapp.api.models.smartapp.DeviceEvent" href="#smartapp.api.models.smartapp.DeviceEvent">DeviceEvent</a></code></h4>
 <ul class="">
 <li><code><a title="smartapp.api.models.smartapp.DeviceEvent.deviceId" href="#smartapp.api.models.smartapp.DeviceEvent.deviceId">deviceId</a></code></li>
 <li><code><a title="smartapp.api.models.smartapp.DeviceEvent.event" href="#smartapp.api.models.smartapp.DeviceEvent.event">event</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="smartapp.api.models.smartapp.DeviceInstallRequest" href="#smartapp.api.models.smartapp.DeviceInstallRequest">DeviceInstallRequest</a></code></h4>
-<ul class="">
-<li><code><a title="smartapp.api.models.smartapp.DeviceInstallRequest.app" href="#smartapp.api.models.smartapp.DeviceInstallRequest.app">app</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.DeviceInstallRequest.label" href="#smartapp.api.models.smartapp.DeviceInstallRequest.label">label</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.DeviceInstallRequest.locationId" href="#smartapp.api.models.smartapp.DeviceInstallRequest.locationId">locationId</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.DeviceInstallRequest.roomId" href="#smartapp.api.models.smartapp.DeviceInstallRequest.roomId">roomId</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="smartapp.api.models.smartapp.DeviceStateEvent" href="#smartapp.api.models.smartapp.DeviceStateEvent">DeviceStateEvent</a></code></h4>
-<ul class="two-column">
-<li><code><a title="smartapp.api.models.smartapp.DeviceStateEvent.attribute" href="#smartapp.api.models.smartapp.DeviceStateEvent.attribute">attribute</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.DeviceStateEvent.capability" href="#smartapp.api.models.smartapp.DeviceStateEvent.capability">capability</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.DeviceStateEvent.component" href="#smartapp.api.models.smartapp.DeviceStateEvent.component">component</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.DeviceStateEvent.data" href="#smartapp.api.models.smartapp.DeviceStateEvent.data">data</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.DeviceStateEvent.unit" href="#smartapp.api.models.smartapp.DeviceStateEvent.unit">unit</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.DeviceStateEvent.value" href="#smartapp.api.models.smartapp.DeviceStateEvent.value">value</a></code></li>
 </ul>
 </li>
 <li>
@@ -2402,22 +1942,6 @@ class UpdateEvent(smartthings.DeviceStateEvent):
 </ul>
 </li>
 <li>
-<h4><code><a title="smartapp.api.models.smartapp.SubscriptionRequest" href="#smartapp.api.models.smartapp.SubscriptionRequest">SubscriptionRequest</a></code></h4>
-<ul class="two-column">
-<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.capability" href="#smartapp.api.models.smartapp.SubscriptionRequest.capability">capability</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.device" href="#smartapp.api.models.smartapp.SubscriptionRequest.device">device</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.deviceHealth" href="#smartapp.api.models.smartapp.SubscriptionRequest.deviceHealth">deviceHealth</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.deviceLifecycle" href="#smartapp.api.models.smartapp.SubscriptionRequest.deviceLifecycle">deviceLifecycle</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.hubHealth" href="#smartapp.api.models.smartapp.SubscriptionRequest.hubHealth">hubHealth</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.id" href="#smartapp.api.models.smartapp.SubscriptionRequest.id">id</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.installedAppId" href="#smartapp.api.models.smartapp.SubscriptionRequest.installedAppId">installedAppId</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.mode" href="#smartapp.api.models.smartapp.SubscriptionRequest.mode">mode</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.sceneLifecycle" href="#smartapp.api.models.smartapp.SubscriptionRequest.sceneLifecycle">sceneLifecycle</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.securityArmState" href="#smartapp.api.models.smartapp.SubscriptionRequest.securityArmState">securityArmState</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.SubscriptionRequest.sourceType" href="#smartapp.api.models.smartapp.SubscriptionRequest.sourceType">sourceType</a></code></li>
-</ul>
-</li>
-<li>
 <h4><code><a title="smartapp.api.models.smartapp.SubscriptionType" href="#smartapp.api.models.smartapp.SubscriptionType">SubscriptionType</a></code></h4>
 <ul class="two-column">
 <li><code><a title="smartapp.api.models.smartapp.SubscriptionType.CAPABILITY" href="#smartapp.api.models.smartapp.SubscriptionType.CAPABILITY">CAPABILITY</a></code></li>
@@ -2453,15 +1977,6 @@ class UpdateEvent(smartthings.DeviceStateEvent):
 <li><code><a title="smartapp.api.models.smartapp.UpdateData.previousConfig" href="#smartapp.api.models.smartapp.UpdateData.previousConfig">previousConfig</a></code></li>
 <li><code><a title="smartapp.api.models.smartapp.UpdateData.previousPermissions" href="#smartapp.api.models.smartapp.UpdateData.previousPermissions">previousPermissions</a></code></li>
 <li><code><a title="smartapp.api.models.smartapp.UpdateData.refreshToken" href="#smartapp.api.models.smartapp.UpdateData.refreshToken">refreshToken</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="smartapp.api.models.smartapp.UpdateDeviceRequest" href="#smartapp.api.models.smartapp.UpdateDeviceRequest">UpdateDeviceRequest</a></code></h4>
-<ul class="">
-<li><code><a title="smartapp.api.models.smartapp.UpdateDeviceRequest.components" href="#smartapp.api.models.smartapp.UpdateDeviceRequest.components">components</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.UpdateDeviceRequest.label" href="#smartapp.api.models.smartapp.UpdateDeviceRequest.label">label</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.UpdateDeviceRequest.locationId" href="#smartapp.api.models.smartapp.UpdateDeviceRequest.locationId">locationId</a></code></li>
-<li><code><a title="smartapp.api.models.smartapp.UpdateDeviceRequest.roomId" href="#smartapp.api.models.smartapp.UpdateDeviceRequest.roomId">roomId</a></code></li>
 </ul>
 </li>
 <li>

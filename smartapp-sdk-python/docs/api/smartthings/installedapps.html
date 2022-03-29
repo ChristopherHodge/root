@@ -74,27 +74,27 @@ class InstalledApp(http.RESTClient):
         ).items:
             yield item
 
-    async def subscribe(self, data: models.smartapp.SubscriptionRequest,
-                              app_id=None) -&gt; models.smartapp.Subscription:
+    async def subscribe(self, data: models.smartthings.SubscriptionRequest,
+                              app_id=None) -&gt; models.smartthings.Subscription:
         &#34;&#34;&#34;Create a new SmartThings Event Subscription for the SmartApp.  Received events
         are passed to the SmartApp&#39;s &#39;handle_event(SubscriptionEvent)&#39; method, which you
         must define.
 
         Args:
-            req (`smartapp.api.models.smartapp.SubscriptionRequest`): new subscription request
+            req (`smartapp.api.models.smartthings.SubscriptionRequest`): new subscription request
             app_id (str): Not needed if invoked via `smartapp.api.smartapp.smartapp.SmartApp.subscribe`
 
         Returns:
-            `smartapp.api.models.smartapp.Subscription`
+            `smartapp.api.models.smartthings.Subscription`
 
         &#34;&#34;&#34;
         if not app_id:
             if not self.app_id:
                 raise ValueError(&#39;app_id&#39;)
             app_id = self.app_id
-        return models.smartapp.Subscription.parse_obj(
+        return models.smartthings.Subscription.parse_obj(
             await self.do(&#39;POST&#39;, &#39;/&#39; + app_id + &#39;/subscriptions&#39;,
-                models.smartapp.SubscriptionRequest.parse_obj(data).dict()
+                models.smartthings.SubscriptionRequest.parse_obj(data).dict()
             )
         )
 
@@ -117,12 +117,12 @@ class InstalledApp(http.RESTClient):
             &#39;DELETE&#39;, &#39;/&#39; + app_id + &#39;/subscriptions/&#39; + id
         )
 
-    async def event(self, data: models.smartapp.SmartAppEventRequest,
+    async def event(self, data: models.smartthings.SmartAppEventRequest,
                           app_id: str = None) -&gt; Dict[str, Any]:
         &#34;&#34;&#34;Send an AppEvent
 
         Args:
-            evt (`smartapp.api.models.smartapp.InstalledAppEventRequest`): List of SmartAppEventeRequest
+            evt (`smartapp.api.models.smartthings.InstalledAppEventRequest`): List of SmartAppEventeRequest
             app_id (str): Not needed if invoked via `smartapp.api.smartapp.smartapp.SmartApp.app_event`
 
         Returns:
@@ -133,9 +133,9 @@ class InstalledApp(http.RESTClient):
                 raise ValueError(&#39;app_id&#39;)
             app_id = self.app_id
         return await self.do(&#39;POST&#39;, &#39;/&#39; + app_id + &#39;/events&#39;,
-            models.smartapp.CreateInstalledAppEventsRequest(
+            models.smartthings.CreateInstalledAppEventsRequest(
                 smartAppEvents=[
-                    models.smartapp.SmartAppEventRequest.parse_obj(
+                    models.smartthings.SmartAppEventRequest.parse_obj(
                         data
                     )
                 ]
@@ -208,27 +208,27 @@ than an 'ORM-like' interface.</p></div>
         ).items:
             yield item
 
-    async def subscribe(self, data: models.smartapp.SubscriptionRequest,
-                              app_id=None) -&gt; models.smartapp.Subscription:
+    async def subscribe(self, data: models.smartthings.SubscriptionRequest,
+                              app_id=None) -&gt; models.smartthings.Subscription:
         &#34;&#34;&#34;Create a new SmartThings Event Subscription for the SmartApp.  Received events
         are passed to the SmartApp&#39;s &#39;handle_event(SubscriptionEvent)&#39; method, which you
         must define.
 
         Args:
-            req (`smartapp.api.models.smartapp.SubscriptionRequest`): new subscription request
+            req (`smartapp.api.models.smartthings.SubscriptionRequest`): new subscription request
             app_id (str): Not needed if invoked via `smartapp.api.smartapp.smartapp.SmartApp.subscribe`
 
         Returns:
-            `smartapp.api.models.smartapp.Subscription`
+            `smartapp.api.models.smartthings.Subscription`
 
         &#34;&#34;&#34;
         if not app_id:
             if not self.app_id:
                 raise ValueError(&#39;app_id&#39;)
             app_id = self.app_id
-        return models.smartapp.Subscription.parse_obj(
+        return models.smartthings.Subscription.parse_obj(
             await self.do(&#39;POST&#39;, &#39;/&#39; + app_id + &#39;/subscriptions&#39;,
-                models.smartapp.SubscriptionRequest.parse_obj(data).dict()
+                models.smartthings.SubscriptionRequest.parse_obj(data).dict()
             )
         )
 
@@ -251,12 +251,12 @@ than an 'ORM-like' interface.</p></div>
             &#39;DELETE&#39;, &#39;/&#39; + app_id + &#39;/subscriptions/&#39; + id
         )
 
-    async def event(self, data: models.smartapp.SmartAppEventRequest,
+    async def event(self, data: models.smartthings.SmartAppEventRequest,
                           app_id: str = None) -&gt; Dict[str, Any]:
         &#34;&#34;&#34;Send an AppEvent
 
         Args:
-            evt (`smartapp.api.models.smartapp.InstalledAppEventRequest`): List of SmartAppEventeRequest
+            evt (`smartapp.api.models.smartthings.InstalledAppEventRequest`): List of SmartAppEventeRequest
             app_id (str): Not needed if invoked via `smartapp.api.smartapp.smartapp.SmartApp.app_event`
 
         Returns:
@@ -267,9 +267,9 @@ than an 'ORM-like' interface.</p></div>
                 raise ValueError(&#39;app_id&#39;)
             app_id = self.app_id
         return await self.do(&#39;POST&#39;, &#39;/&#39; + app_id + &#39;/events&#39;,
-            models.smartapp.CreateInstalledAppEventsRequest(
+            models.smartthings.CreateInstalledAppEventsRequest(
                 smartAppEvents=[
-                    models.smartapp.SmartAppEventRequest.parse_obj(
+                    models.smartthings.SmartAppEventRequest.parse_obj(
                         data
                     )
                 ]
@@ -283,13 +283,13 @@ than an 'ORM-like' interface.</p></div>
 <h3>Methods</h3>
 <dl>
 <dt id="smartapp.api.smartthings.installedapps.InstalledApp.event"><code class="name flex">
-<span>async def <span class="ident">event</span></span>(<span>self, data: <a title="smartapp.api.models.smartapp.SmartAppEventRequest" href="../models/smartapp.html#smartapp.api.models.smartapp.SmartAppEventRequest">SmartAppEventRequest</a>, app_id: str = None) ‑> Dict[str, Any]</span>
+<span>async def <span class="ident">event</span></span>(<span>self, data: smartapp.api.models.smartthings.SmartAppEventRequest, app_id: str = None) ‑> Dict[str, Any]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Send an AppEvent</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt>evt (<code>smartapp.api.models.smartapp.InstalledAppEventRequest</code>): List of SmartAppEventeRequest</dt>
+<dt>evt (<code>smartapp.api.models.smartthings.InstalledAppEventRequest</code>): List of SmartAppEventeRequest</dt>
 <dt><strong><code>app_id</code></strong> :&ensp;<code>str</code></dt>
 <dd>Not needed if invoked via <code><a title="smartapp.api.smartapp.smartapp.SmartApp.app_event" href="../smartapp/smartapp.html#smartapp.api.smartapp.smartapp.SmartApp.app_event">SmartApp.app_event()</a></code></dd>
 </dl>
@@ -299,12 +299,12 @@ than an 'ORM-like' interface.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">async def event(self, data: models.smartapp.SmartAppEventRequest,
+<pre><code class="python">async def event(self, data: models.smartthings.SmartAppEventRequest,
                       app_id: str = None) -&gt; Dict[str, Any]:
     &#34;&#34;&#34;Send an AppEvent
 
     Args:
-        evt (`smartapp.api.models.smartapp.InstalledAppEventRequest`): List of SmartAppEventeRequest
+        evt (`smartapp.api.models.smartthings.InstalledAppEventRequest`): List of SmartAppEventeRequest
         app_id (str): Not needed if invoked via `smartapp.api.smartapp.smartapp.SmartApp.app_event`
 
     Returns:
@@ -315,9 +315,9 @@ than an 'ORM-like' interface.</p></div>
             raise ValueError(&#39;app_id&#39;)
         app_id = self.app_id
     return await self.do(&#39;POST&#39;, &#39;/&#39; + app_id + &#39;/events&#39;,
-        models.smartapp.CreateInstalledAppEventsRequest(
+        models.smartthings.CreateInstalledAppEventsRequest(
             smartAppEvents=[
-                models.smartapp.SmartAppEventRequest.parse_obj(
+                models.smartthings.SmartAppEventRequest.parse_obj(
                     data
                 )
             ]
@@ -348,7 +348,7 @@ than an 'ORM-like' interface.</p></div>
 </details>
 </dd>
 <dt id="smartapp.api.smartthings.installedapps.InstalledApp.subscribe"><code class="name flex">
-<span>async def <span class="ident">subscribe</span></span>(<span>self, data: <a title="smartapp.api.models.smartapp.SubscriptionRequest" href="../models/smartapp.html#smartapp.api.models.smartapp.SubscriptionRequest">SubscriptionRequest</a>, app_id=None) ‑> <a title="smartapp.api.models.smartapp.Subscription" href="../models/smartapp.html#smartapp.api.models.smartapp.Subscription">Subscription</a></span>
+<span>async def <span class="ident">subscribe</span></span>(<span>self, data: smartapp.api.models.smartthings.SubscriptionRequest, app_id=None) ‑> smartapp.api.models.smartthings.Subscription</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Create a new SmartThings Event Subscription for the SmartApp.
@@ -357,37 +357,37 @@ are passed to the SmartApp's 'handle_event(SubscriptionEvent)' method, which you
 must define.</p>
 <h2 id="args">Args</h2>
 <dl>
-<dt>req (<code><a title="smartapp.api.models.smartapp.SubscriptionRequest" href="../models/smartapp.html#smartapp.api.models.smartapp.SubscriptionRequest">SubscriptionRequest</a></code>): new subscription request</dt>
+<dt>req (<code>smartapp.api.models.smartthings.SubscriptionRequest</code>): new subscription request</dt>
 <dt><strong><code>app_id</code></strong> :&ensp;<code>str</code></dt>
 <dd>Not needed if invoked via <code><a title="smartapp.api.smartapp.smartapp.SmartApp.subscribe" href="../smartapp/smartapp.html#smartapp.api.smartapp.smartapp.SmartApp.subscribe">SmartApp.subscribe()</a></code></dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p><code><a title="smartapp.api.models.smartapp.Subscription" href="../models/smartapp.html#smartapp.api.models.smartapp.Subscription">Subscription</a></code></p></div>
+<p><code>smartapp.api.models.smartthings.Subscription</code></p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">async def subscribe(self, data: models.smartapp.SubscriptionRequest,
-                          app_id=None) -&gt; models.smartapp.Subscription:
+<pre><code class="python">async def subscribe(self, data: models.smartthings.SubscriptionRequest,
+                          app_id=None) -&gt; models.smartthings.Subscription:
     &#34;&#34;&#34;Create a new SmartThings Event Subscription for the SmartApp.  Received events
     are passed to the SmartApp&#39;s &#39;handle_event(SubscriptionEvent)&#39; method, which you
     must define.
 
     Args:
-        req (`smartapp.api.models.smartapp.SubscriptionRequest`): new subscription request
+        req (`smartapp.api.models.smartthings.SubscriptionRequest`): new subscription request
         app_id (str): Not needed if invoked via `smartapp.api.smartapp.smartapp.SmartApp.subscribe`
 
     Returns:
-        `smartapp.api.models.smartapp.Subscription`
+        `smartapp.api.models.smartthings.Subscription`
 
     &#34;&#34;&#34;
     if not app_id:
         if not self.app_id:
             raise ValueError(&#39;app_id&#39;)
         app_id = self.app_id
-    return models.smartapp.Subscription.parse_obj(
+    return models.smartthings.Subscription.parse_obj(
         await self.do(&#39;POST&#39;, &#39;/&#39; + app_id + &#39;/subscriptions&#39;,
-            models.smartapp.SubscriptionRequest.parse_obj(data).dict()
+            models.smartthings.SubscriptionRequest.parse_obj(data).dict()
         )
     )</code></pre>
 </details>
